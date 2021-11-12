@@ -8,9 +8,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultimediaDatabase", "Multi
 		{228F586D-89CC-4421-BC05-F0168C6FC7A5} = {228F586D-89CC-4421-BC05-F0168C6FC7A5}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "standard", "..\packages\standard\standard.csproj", "{693D6A8B-F4DB-4DA7-B75D-E6BF691A196E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "standard.Windows", "..\packages\standard.Windows\standard.Windows.csproj", "{693D6A8B-F4DB-4DA7-B75D-E6BF691A196E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySQL", "..\packages\MySQL\MySQL.csproj", "{228F586D-89CC-4421-BC05-F0168C6FC7A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySQL.Windows", "..\packages\MySQL.Windows\MySQL.Windows.csproj", "{228F586D-89CC-4421-BC05-F0168C6FC7A5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{693D6A8B-F4DB-4DA7-B75D-E6BF691A196E} = {693D6A8B-F4DB-4DA7-B75D-E6BF691A196E}
 	EndProjectSection

@@ -22,7 +22,6 @@ namespace MultimediaDatabase
 	static public List<Form> VDBFormsList;
 	static public List<ToolStripMenuItem> VDBFormsMenuItemsList;
 
-	public static string MySQLTableColumn_MediaInfoRawData = "MediaInfoRawData";
 	public static string MySQLTableColumn_OverallBitRate = "OverallBitRate";
 	public static string MySQLTableColumn_Filename = "filename";
 	public static string MySQLTableColumn_Filesize = "filesize";
@@ -63,7 +62,7 @@ namespace MultimediaDatabase
 	    Application.Run(MainForm);
 	}
 	//---------------------------------------------------------------------------
-	public static void GetFileInfoFromDatabase(TMySQLDataRow DataRow, int Index, ref ListViewItem ListItem, MediaInfo MediaInfo, string ArtistDBColumnName)
+	public static void GetFileInfoFromDatabase(TMySQLDataRow DataRow, int Index, ref ListViewItem ListItem, TMediaInfo MediaInfo, string ArtistDBColumnName)
 	{
 	    ulong id;
 	    ulong size;
@@ -109,12 +108,12 @@ namespace MultimediaDatabase
 
 	    id = DataRow.DWORDLONG(0);
 
-	    sizestr = MyString.FormatSizeString(size);
-	    duration_str = MyString.printf_time(duration, tpm);
-	    audio_bitrate_str = MyString.FormatBitRateString(audio_bitrate);
-	    video_bitrate_str = MyString.FormatBitRateString(video_bitrate);
-	    overall_bitrate_str = MyString.FormatBitRateString(overall_bitrate);
-	    audio_samplerate_str = MyString.FormatString("{0} Hz", audio_samplerate);
+	    sizestr = FormatSizeString(size);
+	    duration_str = printf_time(duration, tpm);
+	    audio_bitrate_str = FormatBitRateString(audio_bitrate);
+	    video_bitrate_str = FormatBitRateString(video_bitrate);
+	    overall_bitrate_str = FormatBitRateString(overall_bitrate);
+	    audio_samplerate_str = FormatString("{0} Hz", audio_samplerate);
 
 	    ListItem.Tag = MediaInfo;
 	    ListItem.Text = title;

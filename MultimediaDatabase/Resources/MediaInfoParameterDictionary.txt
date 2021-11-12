@@ -1,0 +1,11 @@
+FileSize = File size
+OverallBitRate = Overall bit rate
+OverallBitRateMode = Overall bit rate mode
+BitDepth = Bit depth
+BitRate = Bit rate
+DisplayAspectRatio = Display aspect ratio
+FrameRateMode = Frame rate mode
+FrameRate = Frame rate
+Encoded_Application = Writing application
+StreamSize = Stream size
+SamplingRate = Sampling rate

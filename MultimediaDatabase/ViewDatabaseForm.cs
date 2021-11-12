@@ -13,6 +13,7 @@ using System.IO;
 using Stndrd;
 using System.Diagnostics;
 using Posts;
+using MultimediaDatabase.Properties;
 
 namespace MultimediaDatabase
 {
@@ -119,13 +120,15 @@ namespace MultimediaDatabase
 	    AllFilesListItem = li;
 
 	    Application.DoEvents();
+
+	    ArtistsListView_SelectedIndexChanged(null, null);
 	}
 
 	private void RefreshArtistDetailsButton_Click(object sender, EventArgs e)
 	{
 	    ListViewItem li;
 	    TMySQLDataRow dr;
-	    MediaInfo mediaInfo;
+	    TMediaInfo mediaInfo;
 	    string whereData = null, whereColumnnName = null;
 
 	    int i, count, listViewCount;
@@ -154,6 +157,9 @@ namespace MultimediaDatabase
 		FileCountTextBox.Text = count.ToString();
 		Application.DoEvents();
 
+		int MySQLTableColumn_MediaInfoRawDataColumnIndex = queryResult.ColumnHeaders.IndexOf(Resources.MySQLTableColumn_MediaInfoRawData);
+		int MySQLTableColumn_MediaInfoHumanReadableColumnIndex = queryResult.ColumnHeaders.IndexOf(Resources.MySQLTableColumn_MediaInfoHumanReadable);
+
 		for (i = 0; i < count; i++)
 		{
 		    dr = queryResult.Rows[i];
@@ -172,8 +178,9 @@ namespace MultimediaDatabase
 			}
 		    }
 
-		    mediaInfo = new MediaInfo();
-		    mediaInfo.RawDataString = dr.StringByColumnName(Program.MySQLTableColumn_MediaInfoRawData);
+		    mediaInfo = new TMediaInfo();
+		    mediaInfo.RawDataString = dr.String(MySQLTableColumn_MediaInfoRawDataColumnIndex);
+		    mediaInfo.MediaInfoString = dr.String(MySQLTableColumn_MediaInfoHumanReadableColumnIndex);
 
 		    ArtistDetailsMediaInfos.Add(mediaInfo);
 
@@ -254,16 +261,20 @@ namespace MultimediaDatabase
 
 	private void ViewMediaInfoButton_Click(object sender, EventArgs e)
 	{
-	    MediaInfo mediaInfo;
+	    TMediaInfo mediaInfo;
 	    string fullfilename;
 
 //	    if (SelectedFileListItem is not null)
 	    foreach (ListViewItem item in SelectedFileListItems)
 	    {
-		mediaInfo = (MediaInfo ) item.Tag;
+		mediaInfo = (TMediaInfo ) item.Tag;
 		fullfilename = Program.GetFullFileNameFromListItem(item);
 
-		Program.ViewMediaInfo(fullfilename, mediaInfo.RawDataStrings);
+		if (mediaInfo.MediaInfoString.Length > 0)
+		    Program.ViewMediaInfo(fullfilename, mediaInfo.MediaInfoString);
+		else
+		    Program.ViewMediaInfo(fullfilename, mediaInfo.RawDataStrings);
+
 	    }
 
 	}
@@ -281,24 +292,28 @@ namespace MultimediaDatabase
 
 	private void DeleteFileItemButton_Click(object sender, EventArgs e)
 	{
-	    int i;
+	    int i, count = SelectedFileListItems.Count;
 
-	    foreach (ListViewItem item in SelectedFileListItems)
+	    if (count > 0)
 	    {
-		i = item.Index;
+		foreach (ListViewItem item in SelectedFileListItems)
+		{
+		    i = item.Index;
 
-		db.ExecuteDeleteQuery(CurrentTableName, Convert.ToUInt32(item.SubItems[21].Text));
+		    db.ExecuteDeleteQuery(CurrentTableName, Convert.ToUInt32(item.SubItems[21].Text));
 
-		ArtistDetailsMediaInfos.Remove((MediaInfo ) item.Tag);
-		FilesListView.Items.Remove(SelectedFileListItem);
+		    ArtistDetailsMediaInfos.Remove((TMediaInfo)item.Tag);
+		    FilesListView.Items.Remove(SelectedFileListItem);
+		}
+		FilesListView_SelectedIndexChanged(null, null);
+		RefreshButton.PerformClick();
 	    }
-	    SelectedFileListItem = null;
-	    RefreshButton.PerformClick();
 	}
 
 	private void ClearArtistDetailsButton_Click(object sender, EventArgs e)
 	{
-	    if (CurrentArtist is not null)
+	    if (CurrentArtist is not null && Standard.QuestionMessage("Confirm Deletion...", "Delete all {0} file(s) of {1} '{2}'?", FilesListView.Items.Count,
+								      CurrentArtistListViewColumnName, CurrentArtist) == DialogResult.Yes)
 	    {
 		FilesListView.Items.Clear();
 		ArtistDetailsMediaInfos.Clear();

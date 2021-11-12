@@ -29,8 +29,6 @@ namespace MultimediaDatabase
 	/// </summary>
 	private void InitializeComponent()
 	{
-	    this.components = new System.ComponentModel.Container();
-	    System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TViewDatabaseForm));
 	    this.FilesListView = new System.Windows.Forms.ListView();
 	    this.FilesListViewTitleColumnHeader = new System.Windows.Forms.ColumnHeader();
 	    this.FilesListViewArtistColumnHeader = new System.Windows.Forms.ColumnHeader();
@@ -62,7 +60,6 @@ namespace MultimediaDatabase
 	    this.FilesListViewVideoChannelLayoutColumnHeader = new System.Windows.Forms.ColumnHeader();
 	    this.FilesListViewAudioChannelPositionsColumnHeader = new System.Windows.Forms.ColumnHeader();
 	    this.RefreshButton = new System.Windows.Forms.Button();
-	    this.ButtonsImageList = new System.Windows.Forms.ImageList(this.components);
 	    this.DumpColumnSizeButton = new System.Windows.Forms.Button();
 	    this.FileCountTextBox = new System.Windows.Forms.TextBox();
 	    this.FileCountTitleLabel = new System.Windows.Forms.Label();
@@ -116,14 +113,15 @@ namespace MultimediaDatabase
             this.FilesListViewAudioBitRateModeColumnHeader,
             this.FilesListViewVideoChannelLayoutColumnHeader,
             this.FilesListViewAudioChannelPositionsColumnHeader});
-	    this.FilesListView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+	    this.FilesListView.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.FilesListView.ForeColor = System.Drawing.Color.White;
 	    this.FilesListView.FullRowSelect = true;
 	    this.FilesListView.GridLines = true;
 	    this.FilesListView.HideSelection = false;
-	    this.FilesListView.Location = new System.Drawing.Point(6, 17);
+	    this.FilesListView.Location = new System.Drawing.Point(7, 20);
+	    this.FilesListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FilesListView.Name = "FilesListView";
-	    this.FilesListView.Size = new System.Drawing.Size(939, 630);
+	    this.FilesListView.Size = new System.Drawing.Size(1117, 755);
 	    this.FilesListView.TabIndex = 3;
 	    this.FilesListView.UseCompatibleStateImageBehavior = false;
 	    this.FilesListView.View = System.Windows.Forms.View.Details;
@@ -139,109 +137,109 @@ namespace MultimediaDatabase
 	    // FilesListViewArtistColumnHeader
 	    // 
 	    this.FilesListViewArtistColumnHeader.Text = "Artist";
-	    this.FilesListViewArtistColumnHeader.Width = 160;
+	    this.FilesListViewArtistColumnHeader.Width = 234;
 	    // 
 	    // FilesListViewFilenameColumnHeader
 	    // 
 	    this.FilesListViewFilenameColumnHeader.Text = "Filename";
-	    this.FilesListViewFilenameColumnHeader.Width = 360;
+	    this.FilesListViewFilenameColumnHeader.Width = 451;
 	    // 
 	    // FilesListViewSizeColumnHeader
 	    // 
 	    this.FilesListViewSizeColumnHeader.Text = "Size";
 	    this.FilesListViewSizeColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesListViewSizeColumnHeader.Width = 80;
+	    this.FilesListViewSizeColumnHeader.Width = 120;
 	    // 
 	    // FilesListViewDurationColumnHeader
 	    // 
 	    this.FilesListViewDurationColumnHeader.Text = "Duration";
 	    this.FilesListViewDurationColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesListViewDurationColumnHeader.Width = 110;
+	    this.FilesListViewDurationColumnHeader.Width = 147;
 	    // 
 	    // FilesListViewOverallBitrateColumnHeader
 	    // 
 	    this.FilesListViewOverallBitrateColumnHeader.Text = "Overall BitRate";
 	    this.FilesListViewOverallBitrateColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesListViewOverallBitrateColumnHeader.Width = 90;
+	    this.FilesListViewOverallBitrateColumnHeader.Width = 142;
 	    // 
 	    // FilesListViewTypeColumnHeader
 	    // 
 	    this.FilesListViewTypeColumnHeader.Text = "Type";
-	    this.FilesListViewTypeColumnHeader.Width = 100;
+	    this.FilesListViewTypeColumnHeader.Width = 110;
 	    // 
 	    // FilesListViewVideoFormatColumnHeader
 	    // 
 	    this.FilesListViewVideoFormatColumnHeader.Text = "Video Format";
-	    this.FilesListViewVideoFormatColumnHeader.Width = 160;
+	    this.FilesListViewVideoFormatColumnHeader.Width = 200;
 	    // 
 	    // FilesListViewResolutionColumnHeader
 	    // 
 	    this.FilesListViewResolutionColumnHeader.Text = "Resolution";
 	    this.FilesListViewResolutionColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesListViewResolutionColumnHeader.Width = 80;
+	    this.FilesListViewResolutionColumnHeader.Width = 122;
 	    // 
 	    // FilesListViewVideoBitRateColumnHeader
 	    // 
 	    this.FilesListViewVideoBitRateColumnHeader.Text = "Video BitRate";
 	    this.FilesListViewVideoBitRateColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesListViewVideoBitRateColumnHeader.Width = 95;
+	    this.FilesListViewVideoBitRateColumnHeader.Width = 162;
 	    // 
 	    // FilesListViewFrameRateColumnHeader
 	    // 
 	    this.FilesListViewFrameRateColumnHeader.Text = "FrameRate";
-	    this.FilesListViewFrameRateColumnHeader.Width = 80;
+	    this.FilesListViewFrameRateColumnHeader.Width = 105;
 	    // 
 	    // FilesListViewAspectRatioColumnHeader
 	    // 
 	    this.FilesListViewAspectRatioColumnHeader.Text = "Aspect Ratio";
 	    this.FilesListViewAspectRatioColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesListViewAspectRatioColumnHeader.Width = 91;
+	    this.FilesListViewAspectRatioColumnHeader.Width = 131;
 	    // 
 	    // FilesListViewAudioFormatColumnHeader
 	    // 
 	    this.FilesListViewAudioFormatColumnHeader.Text = "Audio Format";
-	    this.FilesListViewAudioFormatColumnHeader.Width = 146;
+	    this.FilesListViewAudioFormatColumnHeader.Width = 187;
 	    // 
 	    // FilesListViewAudioBitRateColumnHeader
 	    // 
 	    this.FilesListViewAudioBitRateColumnHeader.Text = "Audio Bitrate";
 	    this.FilesListViewAudioBitRateColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesListViewAudioBitRateColumnHeader.Width = 105;
+	    this.FilesListViewAudioBitRateColumnHeader.Width = 135;
 	    // 
 	    // FilesListViewAudioChannelsColumnHeader
 	    // 
 	    this.FilesListViewAudioChannelsColumnHeader.Text = "Audio Channels";
-	    this.FilesListViewAudioChannelsColumnHeader.Width = 110;
+	    this.FilesListViewAudioChannelsColumnHeader.Width = 143;
 	    // 
 	    // FilesListViewAudioSampleRateColumnHeader
 	    // 
 	    this.FilesListViewAudioSampleRateColumnHeader.Text = "Audio SampleRate";
-	    this.FilesListViewAudioSampleRateColumnHeader.Width = 110;
+	    this.FilesListViewAudioSampleRateColumnHeader.Width = 157;
 	    // 
 	    // FilesListViewAudioBitDepthColumnHeader
 	    // 
 	    this.FilesListViewAudioBitDepthColumnHeader.Text = "Audio Bit Depth";
-	    this.FilesListViewAudioBitDepthColumnHeader.Width = 118;
+	    this.FilesListViewAudioBitDepthColumnHeader.Width = 152;
 	    // 
 	    // FilesListViewPathColumnHeader
 	    // 
 	    this.FilesListViewPathColumnHeader.Text = "Path";
-	    this.FilesListViewPathColumnHeader.Width = 220;
+	    this.FilesListViewPathColumnHeader.Width = 380;
 	    // 
 	    // FilesListViewURLColumnHeader
 	    // 
 	    this.FilesListViewURLColumnHeader.Text = "URL";
-	    this.FilesListViewURLColumnHeader.Width = 244;
+	    this.FilesListViewURLColumnHeader.Width = 430;
 	    // 
 	    // FilesListViewWebshareURLColumnHeader
 	    // 
 	    this.FilesListViewWebshareURLColumnHeader.Text = "WebShareURL";
-	    this.FilesListViewWebshareURLColumnHeader.Width = 244;
+	    this.FilesListViewWebshareURLColumnHeader.Width = 430;
 	    // 
 	    // FilesListViewDateTimeColumnHeader
 	    // 
 	    this.FilesListViewDateTimeColumnHeader.Text = "Date & Time";
-	    this.FilesListViewDateTimeColumnHeader.Width = 126;
+	    this.FilesListViewDateTimeColumnHeader.Width = 192;
 	    // 
 	    // FilesListViewIDColumnHeader
 	    // 
@@ -250,37 +248,37 @@ namespace MultimediaDatabase
 	    // FilesListViewNbVideoTracksColumnHeader
 	    // 
 	    this.FilesListViewNbVideoTracksColumnHeader.Text = "# Video Tracks";
-	    this.FilesListViewNbVideoTracksColumnHeader.Width = 90;
+	    this.FilesListViewNbVideoTracksColumnHeader.Width = 145;
 	    // 
 	    // FilesListViewNbAudioTracksColumnHeader
 	    // 
 	    this.FilesListViewNbAudioTracksColumnHeader.Text = "# Audio Tracks";
-	    this.FilesListViewNbAudioTracksColumnHeader.Width = 90;
+	    this.FilesListViewNbAudioTracksColumnHeader.Width = 145;
 	    // 
 	    // FilesListViewNbSubTitleTracksColumnHeader
 	    // 
-	    this.FilesListViewNbSubTitleTracksColumnHeader.Text = "# Subititle Tracks";
-	    this.FilesListViewNbSubTitleTracksColumnHeader.Width = 107;
+	    this.FilesListViewNbSubTitleTracksColumnHeader.Text = "# Subtitle Tracks";
+	    this.FilesListViewNbSubTitleTracksColumnHeader.Width = 180;
 	    // 
 	    // FilesListViewVideoBitRateModeColumnHeader
 	    // 
 	    this.FilesListViewVideoBitRateModeColumnHeader.Text = "Video BitRate Mode";
-	    this.FilesListViewVideoBitRateModeColumnHeader.Width = 125;
+	    this.FilesListViewVideoBitRateModeColumnHeader.Width = 170;
 	    // 
 	    // FilesListViewAudioBitRateModeColumnHeader
 	    // 
 	    this.FilesListViewAudioBitRateModeColumnHeader.Text = "Audio BitRate Mode";
-	    this.FilesListViewAudioBitRateModeColumnHeader.Width = 133;
+	    this.FilesListViewAudioBitRateModeColumnHeader.Width = 170;
 	    // 
 	    // FilesListViewVideoChannelLayoutColumnHeader
 	    // 
 	    this.FilesListViewVideoChannelLayoutColumnHeader.Text = "Audio Channel Layout";
-	    this.FilesListViewVideoChannelLayoutColumnHeader.Width = 140;
+	    this.FilesListViewVideoChannelLayoutColumnHeader.Width = 182;
 	    // 
 	    // FilesListViewAudioChannelPositionsColumnHeader
 	    // 
 	    this.FilesListViewAudioChannelPositionsColumnHeader.Text = "Audio Channel Positions";
-	    this.FilesListViewAudioChannelPositionsColumnHeader.Width = 160;
+	    this.FilesListViewAudioChannelPositionsColumnHeader.Width = 224;
 	    // 
 	    // RefreshButton
 	    // 
@@ -288,34 +286,25 @@ namespace MultimediaDatabase
 	    this.RefreshButton.BackColor = System.Drawing.Color.DimGray;
 	    this.RefreshButton.ForeColor = System.Drawing.SystemColors.Control;
 	    this.RefreshButton.Image = global::MultimediaDatabase.Properties.Resources.retry;
-	    this.RefreshButton.Location = new System.Drawing.Point(12, 672);
+	    this.RefreshButton.Location = new System.Drawing.Point(14, 806);
+	    this.RefreshButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.RefreshButton.Name = "RefreshButton";
-	    this.RefreshButton.Size = new System.Drawing.Size(116, 28);
+	    this.RefreshButton.Size = new System.Drawing.Size(133, 34);
 	    this.RefreshButton.TabIndex = 4;
 	    this.RefreshButton.Text = "Refresh";
 	    this.RefreshButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 	    this.RefreshButton.UseVisualStyleBackColor = false;
 	    this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
 	    // 
-	    // ButtonsImageList
-	    // 
-	    this.ButtonsImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-	    this.ButtonsImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ButtonsImageList.ImageStream")));
-	    this.ButtonsImageList.TransparentColor = System.Drawing.Color.Transparent;
-	    this.ButtonsImageList.Images.SetKeyName(0, "clear.bmp");
-	    this.ButtonsImageList.Images.SetKeyName(1, "fileopen.bmp");
-	    this.ButtonsImageList.Images.SetKeyName(2, "play button.bmp");
-	    this.ButtonsImageList.Images.SetKeyName(3, "Remove Item.bmp");
-	    this.ButtonsImageList.Images.SetKeyName(4, "retry.bmp");
-	    // 
 	    // DumpColumnSizeButton
 	    // 
 	    this.DumpColumnSizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 	    this.DumpColumnSizeButton.BackColor = System.Drawing.Color.DimGray;
 	    this.DumpColumnSizeButton.ForeColor = System.Drawing.SystemColors.Control;
-	    this.DumpColumnSizeButton.Location = new System.Drawing.Point(147, 672);
+	    this.DumpColumnSizeButton.Location = new System.Drawing.Point(168, 806);
+	    this.DumpColumnSizeButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DumpColumnSizeButton.Name = "DumpColumnSizeButton";
-	    this.DumpColumnSizeButton.Size = new System.Drawing.Size(30, 28);
+	    this.DumpColumnSizeButton.Size = new System.Drawing.Size(34, 34);
 	    this.DumpColumnSizeButton.TabIndex = 5;
 	    this.DumpColumnSizeButton.Text = "d";
 	    this.DumpColumnSizeButton.UseVisualStyleBackColor = false;
@@ -326,23 +315,25 @@ namespace MultimediaDatabase
 	    this.FileCountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 	    this.FileCountTextBox.BackColor = System.Drawing.Color.DimGray;
 	    this.FileCountTextBox.ForeColor = System.Drawing.SystemColors.Control;
-	    this.FileCountTextBox.Location = new System.Drawing.Point(1175, 672);
+	    this.FileCountTextBox.Location = new System.Drawing.Point(1428, 811);
+	    this.FileCountTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FileCountTextBox.Name = "FileCountTextBox";
 	    this.FileCountTextBox.ReadOnly = true;
-	    this.FileCountTextBox.Size = new System.Drawing.Size(67, 23);
+	    this.FileCountTextBox.Size = new System.Drawing.Size(76, 25);
 	    this.FileCountTextBox.TabIndex = 6;
 	    this.FileCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 	    // 
 	    // FileCountTitleLabel
 	    // 
 	    this.FileCountTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+	    this.FileCountTitleLabel.AutoSize = true;
 	    this.FileCountTitleLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-	    this.FileCountTitleLabel.Location = new System.Drawing.Point(1101, 672);
+	    this.FileCountTitleLabel.Location = new System.Drawing.Point(1324, 814);
 	    this.FileCountTitleLabel.Name = "FileCountTitleLabel";
-	    this.FileCountTitleLabel.Size = new System.Drawing.Size(68, 23);
+	    this.FileCountTitleLabel.Size = new System.Drawing.Size(96, 18);
 	    this.FileCountTitleLabel.TabIndex = 7;
 	    this.FileCountTitleLabel.Text = "# of Files:";
-	    this.FileCountTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+	    this.FileCountTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 	    // 
 	    // ArtistsListView
 	    // 
@@ -353,15 +344,16 @@ namespace MultimediaDatabase
 	    this.ArtistsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ArtistsListViewArtistColumnHeader,
             this.ArtistsListViewCountColumnHeader});
-	    this.ArtistsListView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+	    this.ArtistsListView.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.ArtistsListView.ForeColor = System.Drawing.Color.White;
 	    this.ArtistsListView.FullRowSelect = true;
 	    this.ArtistsListView.GridLines = true;
 	    this.ArtistsListView.HideSelection = false;
-	    this.ArtistsListView.Location = new System.Drawing.Point(6, 14);
+	    this.ArtistsListView.Location = new System.Drawing.Point(7, 17);
+	    this.ArtistsListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ArtistsListView.MultiSelect = false;
 	    this.ArtistsListView.Name = "ArtistsListView";
-	    this.ArtistsListView.Size = new System.Drawing.Size(281, 633);
+	    this.ArtistsListView.Size = new System.Drawing.Size(351, 759);
 	    this.ArtistsListView.TabIndex = 8;
 	    this.ArtistsListView.UseCompatibleStateImageBehavior = false;
 	    this.ArtistsListView.View = System.Windows.Forms.View.Details;
@@ -371,13 +363,13 @@ namespace MultimediaDatabase
 	    // ArtistsListViewArtistColumnHeader
 	    // 
 	    this.ArtistsListViewArtistColumnHeader.Text = "Artist";
-	    this.ArtistsListViewArtistColumnHeader.Width = 200;
+	    this.ArtistsListViewArtistColumnHeader.Width = 250;
 	    // 
 	    // ArtistsListViewCountColumnHeader
 	    // 
 	    this.ArtistsListViewCountColumnHeader.Text = "Count";
 	    this.ArtistsListViewCountColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.ArtistsListViewCountColumnHeader.Width = 50;
+	    this.ArtistsListViewCountColumnHeader.Width = 70;
 	    // 
 	    // RefreshArtistDetailsButton
 	    // 
@@ -386,9 +378,10 @@ namespace MultimediaDatabase
 	    this.RefreshArtistDetailsButton.Enabled = false;
 	    this.RefreshArtistDetailsButton.ForeColor = System.Drawing.SystemColors.Control;
 	    this.RefreshArtistDetailsButton.Image = global::MultimediaDatabase.Properties.Resources.retry;
-	    this.RefreshArtistDetailsButton.Location = new System.Drawing.Point(989, 671);
+	    this.RefreshArtistDetailsButton.Location = new System.Drawing.Point(1173, 806);
+	    this.RefreshArtistDetailsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.RefreshArtistDetailsButton.Name = "RefreshArtistDetailsButton";
-	    this.RefreshArtistDetailsButton.Size = new System.Drawing.Size(116, 28);
+	    this.RefreshArtistDetailsButton.Size = new System.Drawing.Size(133, 34);
 	    this.RefreshArtistDetailsButton.TabIndex = 9;
 	    this.RefreshArtistDetailsButton.Text = "Refresh";
 	    this.RefreshArtistDetailsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -402,11 +395,12 @@ namespace MultimediaDatabase
 	    this.ViewMediaInfoButton.Enabled = false;
 	    this.ViewMediaInfoButton.ForeColor = System.Drawing.SystemColors.Control;
 	    this.ViewMediaInfoButton.Image = global::MultimediaDatabase.Properties.Resources.fileopen;
-	    this.ViewMediaInfoButton.Location = new System.Drawing.Point(415, 672);
+	    this.ViewMediaInfoButton.Location = new System.Drawing.Point(474, 806);
+	    this.ViewMediaInfoButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ViewMediaInfoButton.Name = "ViewMediaInfoButton";
-	    this.ViewMediaInfoButton.Size = new System.Drawing.Size(170, 28);
+	    this.ViewMediaInfoButton.Size = new System.Drawing.Size(191, 34);
 	    this.ViewMediaInfoButton.TabIndex = 10;
-	    this.ViewMediaInfoButton.Text = "View MediaInfo Raw Data";
+	    this.ViewMediaInfoButton.Text = "View MediaInfo";
 	    this.ViewMediaInfoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 	    this.ViewMediaInfoButton.UseVisualStyleBackColor = false;
 	    this.ViewMediaInfoButton.Click += new System.EventHandler(this.ViewMediaInfoButton_Click);
@@ -418,9 +412,10 @@ namespace MultimediaDatabase
 	    this.PlayFileButton.Enabled = false;
 	    this.PlayFileButton.ForeColor = System.Drawing.SystemColors.Control;
 	    this.PlayFileButton.Image = global::MultimediaDatabase.Properties.Resources.play_button;
-	    this.PlayFileButton.Location = new System.Drawing.Point(301, 672);
+	    this.PlayFileButton.Location = new System.Drawing.Point(344, 806);
+	    this.PlayFileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.PlayFileButton.Name = "PlayFileButton";
-	    this.PlayFileButton.Size = new System.Drawing.Size(108, 28);
+	    this.PlayFileButton.Size = new System.Drawing.Size(123, 34);
 	    this.PlayFileButton.TabIndex = 11;
 	    this.PlayFileButton.Text = "Play";
 	    this.PlayFileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -434,9 +429,10 @@ namespace MultimediaDatabase
 	    this.DeleteFileItemButton.Enabled = false;
 	    this.DeleteFileItemButton.ForeColor = System.Drawing.SystemColors.Control;
 	    this.DeleteFileItemButton.Image = global::MultimediaDatabase.Properties.Resources.Remove_Item;
-	    this.DeleteFileItemButton.Location = new System.Drawing.Point(591, 672);
+	    this.DeleteFileItemButton.Location = new System.Drawing.Point(671, 806);
+	    this.DeleteFileItemButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DeleteFileItemButton.Name = "DeleteFileItemButton";
-	    this.DeleteFileItemButton.Size = new System.Drawing.Size(104, 28);
+	    this.DeleteFileItemButton.Size = new System.Drawing.Size(119, 34);
 	    this.DeleteFileItemButton.TabIndex = 12;
 	    this.DeleteFileItemButton.Text = "Delete";
 	    this.DeleteFileItemButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -450,9 +446,10 @@ namespace MultimediaDatabase
 	    this.ClearArtistDetailsButton.Enabled = false;
 	    this.ClearArtistDetailsButton.ForeColor = System.Drawing.SystemColors.Control;
 	    this.ClearArtistDetailsButton.Image = global::MultimediaDatabase.Properties.Resources.clear;
-	    this.ClearArtistDetailsButton.Location = new System.Drawing.Point(876, 671);
+	    this.ClearArtistDetailsButton.Location = new System.Drawing.Point(1044, 806);
+	    this.ClearArtistDetailsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ClearArtistDetailsButton.Name = "ClearArtistDetailsButton";
-	    this.ClearArtistDetailsButton.Size = new System.Drawing.Size(107, 28);
+	    this.ClearArtistDetailsButton.Size = new System.Drawing.Size(122, 34);
 	    this.ClearArtistDetailsButton.TabIndex = 13;
 	    this.ClearArtistDetailsButton.Text = "Clear";
 	    this.ClearArtistDetailsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -466,9 +463,11 @@ namespace MultimediaDatabase
             | System.Windows.Forms.AnchorStyles.Right)));
 	    this.ArtistDetailsGroupBox.Controls.Add(this.FilesListView);
 	    this.ArtistDetailsGroupBox.ForeColor = System.Drawing.Color.White;
-	    this.ArtistDetailsGroupBox.Location = new System.Drawing.Point(301, 12);
+	    this.ArtistDetailsGroupBox.Location = new System.Drawing.Point(373, 14);
+	    this.ArtistDetailsGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ArtistDetailsGroupBox.Name = "ArtistDetailsGroupBox";
-	    this.ArtistDetailsGroupBox.Size = new System.Drawing.Size(951, 653);
+	    this.ArtistDetailsGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.ArtistDetailsGroupBox.Size = new System.Drawing.Size(1131, 784);
 	    this.ArtistDetailsGroupBox.TabIndex = 14;
 	    this.ArtistDetailsGroupBox.TabStop = false;
 	    this.ArtistDetailsGroupBox.Text = "Artist";
@@ -479,18 +478,20 @@ namespace MultimediaDatabase
             | System.Windows.Forms.AnchorStyles.Left)));
 	    this.ArtistsGroupBox.Controls.Add(this.ArtistsListView);
 	    this.ArtistsGroupBox.ForeColor = System.Drawing.Color.White;
-	    this.ArtistsGroupBox.Location = new System.Drawing.Point(2, 12);
+	    this.ArtistsGroupBox.Location = new System.Drawing.Point(2, 14);
+	    this.ArtistsGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ArtistsGroupBox.Name = "ArtistsGroupBox";
-	    this.ArtistsGroupBox.Size = new System.Drawing.Size(293, 653);
+	    this.ArtistsGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.ArtistsGroupBox.Size = new System.Drawing.Size(365, 784);
 	    this.ArtistsGroupBox.TabIndex = 15;
 	    this.ArtistsGroupBox.TabStop = false;
 	    // 
 	    // TViewDatabaseForm
 	    // 
-	    this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+	    this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
 	    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 	    this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-	    this.ClientSize = new System.Drawing.Size(1255, 706);
+	    this.ClientSize = new System.Drawing.Size(1514, 847);
 	    this.Controls.Add(this.ArtistsGroupBox);
 	    this.Controls.Add(this.ArtistDetailsGroupBox);
 	    this.Controls.Add(this.ClearArtistDetailsButton);
@@ -502,8 +503,10 @@ namespace MultimediaDatabase
 	    this.Controls.Add(this.FileCountTextBox);
 	    this.Controls.Add(this.DumpColumnSizeButton);
 	    this.Controls.Add(this.RefreshButton);
+	    this.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.ForeColor = System.Drawing.SystemColors.Control;
-	    this.MinimumSize = new System.Drawing.Size(1271, 745);
+	    this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.MinimumSize = new System.Drawing.Size(1530, 886);
 	    this.Name = "TViewDatabaseForm";
 	    this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 	    this.Text = "View Database...";
@@ -562,6 +565,5 @@ namespace MultimediaDatabase
 	private System.Windows.Forms.Button ClearArtistDetailsButton;
 	private System.Windows.Forms.GroupBox ArtistDetailsGroupBox;
 	private System.Windows.Forms.GroupBox ArtistsGroupBox;
-	private System.Windows.Forms.ImageList ButtonsImageList;
     }
 }

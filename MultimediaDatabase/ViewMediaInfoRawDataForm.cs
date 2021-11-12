@@ -20,18 +20,18 @@ namespace MultimediaDatabase
 	}
 
 	//---------------------------------------------------------------------------
-	public int Execute(string Filename, TListOfStrings rawDataStrings)
+	public int Execute(string Filename, TListOfStrings mediaInfoStrings)
 	{
 	    int r = 1;
 
 	    MediaInfoContentGroupBox.Text = Filename;
 	    Text = String.Format("View MediaInfo Raw Data for {0}...", Path.GetFileName(Filename));
 
-	    MediaInfoContentTextBox.Lines = rawDataStrings.ToArray();
+	    MediaInfoContentRichTextBox.Lines = mediaInfoStrings.ToArray();
 
 	    Show();
 
-	    MediaInfoContentTextBox.SelectionLength = 0;
+	    MediaInfoContentRichTextBox.SelectionLength = 0;
 	    return r;
 	}
 
@@ -43,17 +43,23 @@ namespace MultimediaDatabase
 
     partial class Program
     {
-	public static int ViewMediaInfo(string Filename, TListOfStrings rawDataStrings)
+	public static int ViewMediaInfo(string Filename, TListOfStrings mediaInfoStrings)
 	{
 	    int r;
 	    TViewMediaInfoRawDataForm vmiform = new TViewMediaInfoRawDataForm();
 
-	    r = vmiform.Execute(Filename, rawDataStrings);
+	    r = vmiform.Execute(Filename, mediaInfoStrings);
 
 	    AddFormToWindowMenu(vmiform);
 
 	    return r;
 	}
 
+	public static int ViewMediaInfo(string Filename, string mediaInfoString)
+	{
+	    TListOfStrings mediaInfoStrings = new TListOfStrings(mediaInfoString,"\r\n");
+
+	    return ViewMediaInfo(Filename, mediaInfoStrings);
+	}
     }
 }

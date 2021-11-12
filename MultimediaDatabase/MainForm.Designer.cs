@@ -143,9 +143,10 @@ namespace MultimediaDatabase
 	    this.ScanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 	    this.ScanButton.BackColor = System.Drawing.Color.DimGray;
 	    this.ScanButton.ForeColor = System.Drawing.Color.White;
-	    this.ScanButton.Location = new System.Drawing.Point(21, 609);
+	    this.ScanButton.Location = new System.Drawing.Point(24, 731);
+	    this.ScanButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ScanButton.Name = "ScanButton";
-	    this.ScanButton.Size = new System.Drawing.Size(105, 28);
+	    this.ScanButton.Size = new System.Drawing.Size(120, 34);
 	    this.ScanButton.TabIndex = 0;
 	    this.ScanButton.Text = "Scan";
 	    this.ScanButton.UseVisualStyleBackColor = false;
@@ -156,9 +157,10 @@ namespace MultimediaDatabase
 	    this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-	    this.statusBar.Location = new System.Drawing.Point(0, 639);
+	    this.statusBar.Location = new System.Drawing.Point(0, 767);
 	    this.statusBar.Name = "statusBar";
-	    this.statusBar.Size = new System.Drawing.Size(1196, 22);
+	    this.statusBar.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+	    this.statusBar.Size = new System.Drawing.Size(1367, 26);
 	    this.statusBar.TabIndex = 3;
 	    this.statusBar.Text = "statusStrip1";
 	    // 
@@ -167,7 +169,7 @@ namespace MultimediaDatabase
 	    this.toolStripStatusLabel1.AutoSize = false;
 	    this.toolStripStatusLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 	    this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-	    this.toolStripStatusLabel1.Size = new System.Drawing.Size(100, 17);
+	    this.toolStripStatusLabel1.Size = new System.Drawing.Size(100, 21);
 	    this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 	    // 
 	    // toolStripStatusLabel2
@@ -176,7 +178,7 @@ namespace MultimediaDatabase
 	    this.toolStripStatusLabel2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 	    this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.White;
 	    this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-	    this.toolStripStatusLabel2.Size = new System.Drawing.Size(800, 17);
+	    this.toolStripStatusLabel2.Size = new System.Drawing.Size(800, 21);
 	    this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 	    // 
 	    // DatabaseDirectoriesGroupBox
@@ -188,10 +190,13 @@ namespace MultimediaDatabase
 	    this.DatabaseDirectoriesGroupBox.Controls.Add(this.EditSelectedDirectoryButton);
 	    this.DatabaseDirectoriesGroupBox.Controls.Add(this.AddDirectoryButton);
 	    this.DatabaseDirectoriesGroupBox.Controls.Add(this.DatabaseDirectoriesListView);
+	    this.DatabaseDirectoriesGroupBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.DatabaseDirectoriesGroupBox.ForeColor = System.Drawing.Color.White;
-	    this.DatabaseDirectoriesGroupBox.Location = new System.Drawing.Point(21, 84);
+	    this.DatabaseDirectoriesGroupBox.Location = new System.Drawing.Point(24, 101);
+	    this.DatabaseDirectoriesGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DatabaseDirectoriesGroupBox.Name = "DatabaseDirectoriesGroupBox";
-	    this.DatabaseDirectoriesGroupBox.Size = new System.Drawing.Size(1151, 160);
+	    this.DatabaseDirectoriesGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.DatabaseDirectoriesGroupBox.Size = new System.Drawing.Size(1315, 192);
 	    this.DatabaseDirectoriesGroupBox.TabIndex = 4;
 	    this.DatabaseDirectoriesGroupBox.TabStop = false;
 	    this.DatabaseDirectoriesGroupBox.Text = "Database Directories:";
@@ -201,9 +206,10 @@ namespace MultimediaDatabase
 	    this.ClearDirectoriesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 	    this.ClearDirectoriesButton.BackColor = System.Drawing.Color.DimGray;
 	    this.ClearDirectoriesButton.Enabled = false;
-	    this.ClearDirectoriesButton.Location = new System.Drawing.Point(1061, 109);
+	    this.ClearDirectoriesButton.Location = new System.Drawing.Point(1213, 131);
+	    this.ClearDirectoriesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ClearDirectoriesButton.Name = "ClearDirectoriesButton";
-	    this.ClearDirectoriesButton.Size = new System.Drawing.Size(75, 23);
+	    this.ClearDirectoriesButton.Size = new System.Drawing.Size(86, 28);
 	    this.ClearDirectoriesButton.TabIndex = 4;
 	    this.ClearDirectoriesButton.Text = "Clear";
 	    this.ClearDirectoriesButton.UseVisualStyleBackColor = false;
@@ -214,9 +220,10 @@ namespace MultimediaDatabase
 	    this.DeleteSelectedDirectoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 	    this.DeleteSelectedDirectoryButton.BackColor = System.Drawing.Color.DimGray;
 	    this.DeleteSelectedDirectoryButton.Enabled = false;
-	    this.DeleteSelectedDirectoryButton.Location = new System.Drawing.Point(1061, 80);
+	    this.DeleteSelectedDirectoryButton.Location = new System.Drawing.Point(1213, 96);
+	    this.DeleteSelectedDirectoryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DeleteSelectedDirectoryButton.Name = "DeleteSelectedDirectoryButton";
-	    this.DeleteSelectedDirectoryButton.Size = new System.Drawing.Size(75, 23);
+	    this.DeleteSelectedDirectoryButton.Size = new System.Drawing.Size(86, 28);
 	    this.DeleteSelectedDirectoryButton.TabIndex = 3;
 	    this.DeleteSelectedDirectoryButton.Text = "Delete";
 	    this.DeleteSelectedDirectoryButton.UseVisualStyleBackColor = false;
@@ -227,9 +234,10 @@ namespace MultimediaDatabase
 	    this.EditSelectedDirectoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 	    this.EditSelectedDirectoryButton.BackColor = System.Drawing.Color.DimGray;
 	    this.EditSelectedDirectoryButton.Enabled = false;
-	    this.EditSelectedDirectoryButton.Location = new System.Drawing.Point(1061, 51);
+	    this.EditSelectedDirectoryButton.Location = new System.Drawing.Point(1213, 61);
+	    this.EditSelectedDirectoryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.EditSelectedDirectoryButton.Name = "EditSelectedDirectoryButton";
-	    this.EditSelectedDirectoryButton.Size = new System.Drawing.Size(75, 23);
+	    this.EditSelectedDirectoryButton.Size = new System.Drawing.Size(86, 28);
 	    this.EditSelectedDirectoryButton.TabIndex = 2;
 	    this.EditSelectedDirectoryButton.Text = "Edit";
 	    this.EditSelectedDirectoryButton.UseVisualStyleBackColor = false;
@@ -240,9 +248,10 @@ namespace MultimediaDatabase
 	    this.AddDirectoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 	    this.AddDirectoryButton.BackColor = System.Drawing.Color.DimGray;
 	    this.AddDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-	    this.AddDirectoryButton.Location = new System.Drawing.Point(1061, 22);
+	    this.AddDirectoryButton.Location = new System.Drawing.Point(1213, 26);
+	    this.AddDirectoryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.AddDirectoryButton.Name = "AddDirectoryButton";
-	    this.AddDirectoryButton.Size = new System.Drawing.Size(75, 23);
+	    this.AddDirectoryButton.Size = new System.Drawing.Size(86, 28);
 	    this.AddDirectoryButton.TabIndex = 1;
 	    this.AddDirectoryButton.Text = "Add";
 	    this.AddDirectoryButton.UseVisualStyleBackColor = false;
@@ -258,15 +267,16 @@ namespace MultimediaDatabase
             this.PathOnDiskColumnHeader,
             this.URLColumnHeader,
             this.WebShareURLColumnHeader});
-	    this.DatabaseDirectoriesListView.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+	    this.DatabaseDirectoriesListView.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.DatabaseDirectoriesListView.ForeColor = System.Drawing.Color.White;
 	    this.DatabaseDirectoriesListView.FullRowSelect = true;
 	    this.DatabaseDirectoriesListView.GridLines = true;
 	    this.DatabaseDirectoriesListView.HideSelection = false;
-	    this.DatabaseDirectoriesListView.Location = new System.Drawing.Point(10, 22);
+	    this.DatabaseDirectoriesListView.Location = new System.Drawing.Point(11, 26);
+	    this.DatabaseDirectoriesListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DatabaseDirectoriesListView.MultiSelect = false;
 	    this.DatabaseDirectoriesListView.Name = "DatabaseDirectoriesListView";
-	    this.DatabaseDirectoriesListView.Size = new System.Drawing.Size(1037, 132);
+	    this.DatabaseDirectoriesListView.Size = new System.Drawing.Size(1185, 158);
 	    this.DatabaseDirectoriesListView.TabIndex = 0;
 	    this.DatabaseDirectoriesListView.UseCompatibleStateImageBehavior = false;
 	    this.DatabaseDirectoriesListView.View = System.Windows.Forms.View.Details;
@@ -292,21 +302,23 @@ namespace MultimediaDatabase
 	    // 
 	    this.CurrentDatabaseComboBox.BackColor = System.Drawing.Color.DimGray;
 	    this.CurrentDatabaseComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+	    this.CurrentDatabaseComboBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.CurrentDatabaseComboBox.ForeColor = System.Drawing.Color.White;
 	    this.CurrentDatabaseComboBox.FormattingEnabled = true;
-	    this.CurrentDatabaseComboBox.Location = new System.Drawing.Point(152, 42);
+	    this.CurrentDatabaseComboBox.Location = new System.Drawing.Point(216, 50);
+	    this.CurrentDatabaseComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.CurrentDatabaseComboBox.Name = "CurrentDatabaseComboBox";
-	    this.CurrentDatabaseComboBox.Size = new System.Drawing.Size(180, 23);
+	    this.CurrentDatabaseComboBox.Size = new System.Drawing.Size(205, 26);
 	    this.CurrentDatabaseComboBox.TabIndex = 5;
 	    this.CurrentDatabaseComboBox.SelectedIndexChanged += new System.EventHandler(this.CurrentDatabaseComboBox_SelectedIndexChanged);
 	    // 
 	    // CurrentDatabaseTitleLabel
 	    // 
-	    this.CurrentDatabaseTitleLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+	    this.CurrentDatabaseTitleLabel.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.CurrentDatabaseTitleLabel.ForeColor = System.Drawing.Color.White;
-	    this.CurrentDatabaseTitleLabel.Location = new System.Drawing.Point(21, 42);
+	    this.CurrentDatabaseTitleLabel.Location = new System.Drawing.Point(24, 50);
 	    this.CurrentDatabaseTitleLabel.Name = "CurrentDatabaseTitleLabel";
-	    this.CurrentDatabaseTitleLabel.Size = new System.Drawing.Size(125, 20);
+	    this.CurrentDatabaseTitleLabel.Size = new System.Drawing.Size(169, 24);
 	    this.CurrentDatabaseTitleLabel.TabIndex = 6;
 	    this.CurrentDatabaseTitleLabel.Text = "Current Database:";
 	    this.CurrentDatabaseTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -319,11 +331,12 @@ namespace MultimediaDatabase
 	    this.FileReportPageControl.Controls.Add(this.FilesAddedPage);
 	    this.FileReportPageControl.Controls.Add(this.FilesDeletedPage);
 	    this.FileReportPageControl.Controls.Add(this.FilesUpdatedPage);
-	    this.FileReportPageControl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-	    this.FileReportPageControl.Location = new System.Drawing.Point(21, 262);
+	    this.FileReportPageControl.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+	    this.FileReportPageControl.Location = new System.Drawing.Point(24, 314);
+	    this.FileReportPageControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FileReportPageControl.Name = "FileReportPageControl";
 	    this.FileReportPageControl.SelectedIndex = 0;
-	    this.FileReportPageControl.Size = new System.Drawing.Size(1151, 341);
+	    this.FileReportPageControl.Size = new System.Drawing.Size(1315, 409);
 	    this.FileReportPageControl.TabIndex = 7;
 	    this.FileReportPageControl.SelectedIndexChanged += new System.EventHandler(this.FileReportPageControl_SelectedIndexChanged);
 	    // 
@@ -333,9 +346,10 @@ namespace MultimediaDatabase
 	    this.FilesAddedPage.Controls.Add(this.AddedFilesListView);
 	    this.FilesAddedPage.ForeColor = System.Drawing.Color.White;
 	    this.FilesAddedPage.Location = new System.Drawing.Point(4, 27);
+	    this.FilesAddedPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FilesAddedPage.Name = "FilesAddedPage";
-	    this.FilesAddedPage.Padding = new System.Windows.Forms.Padding(3);
-	    this.FilesAddedPage.Size = new System.Drawing.Size(1143, 310);
+	    this.FilesAddedPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.FilesAddedPage.Size = new System.Drawing.Size(1307, 378);
 	    this.FilesAddedPage.TabIndex = 0;
 	    this.FilesAddedPage.Text = "Files Added";
 	    // 
@@ -379,9 +393,10 @@ namespace MultimediaDatabase
 	    this.AddedFilesListView.FullRowSelect = true;
 	    this.AddedFilesListView.GridLines = true;
 	    this.AddedFilesListView.HideSelection = false;
-	    this.AddedFilesListView.Location = new System.Drawing.Point(6, 6);
+	    this.AddedFilesListView.Location = new System.Drawing.Point(7, 7);
+	    this.AddedFilesListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.AddedFilesListView.Name = "AddedFilesListView";
-	    this.AddedFilesListView.Size = new System.Drawing.Size(1134, 298);
+	    this.AddedFilesListView.Size = new System.Drawing.Size(1295, 357);
 	    this.AddedFilesListView.TabIndex = 2;
 	    this.AddedFilesListView.UseCompatibleStateImageBehavior = false;
 	    this.AddedFilesListView.View = System.Windows.Forms.View.Details;
@@ -544,9 +559,10 @@ namespace MultimediaDatabase
 	    this.FilesDeletedPage.Controls.Add(this.DeletedFilesListView);
 	    this.FilesDeletedPage.ForeColor = System.Drawing.Color.White;
 	    this.FilesDeletedPage.Location = new System.Drawing.Point(4, 27);
+	    this.FilesDeletedPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FilesDeletedPage.Name = "FilesDeletedPage";
-	    this.FilesDeletedPage.Padding = new System.Windows.Forms.Padding(3);
-	    this.FilesDeletedPage.Size = new System.Drawing.Size(1143, 310);
+	    this.FilesDeletedPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.FilesDeletedPage.Size = new System.Drawing.Size(1307, 378);
 	    this.FilesDeletedPage.TabIndex = 1;
 	    this.FilesDeletedPage.Text = "Deleted";
 	    // 
@@ -590,9 +606,10 @@ namespace MultimediaDatabase
 	    this.DeletedFilesListView.FullRowSelect = true;
 	    this.DeletedFilesListView.GridLines = true;
 	    this.DeletedFilesListView.HideSelection = false;
-	    this.DeletedFilesListView.Location = new System.Drawing.Point(6, 6);
+	    this.DeletedFilesListView.Location = new System.Drawing.Point(7, 7);
+	    this.DeletedFilesListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DeletedFilesListView.Name = "DeletedFilesListView";
-	    this.DeletedFilesListView.Size = new System.Drawing.Size(1112, 348);
+	    this.DeletedFilesListView.Size = new System.Drawing.Size(1270, 417);
 	    this.DeletedFilesListView.TabIndex = 3;
 	    this.DeletedFilesListView.UseCompatibleStateImageBehavior = false;
 	    this.DeletedFilesListView.View = System.Windows.Forms.View.Details;
@@ -755,9 +772,10 @@ namespace MultimediaDatabase
 	    this.FilesUpdatedPage.Controls.Add(this.UpdatedFilesListView);
 	    this.FilesUpdatedPage.ForeColor = System.Drawing.Color.White;
 	    this.FilesUpdatedPage.Location = new System.Drawing.Point(4, 27);
+	    this.FilesUpdatedPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FilesUpdatedPage.Name = "FilesUpdatedPage";
-	    this.FilesUpdatedPage.Padding = new System.Windows.Forms.Padding(3);
-	    this.FilesUpdatedPage.Size = new System.Drawing.Size(1143, 310);
+	    this.FilesUpdatedPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.FilesUpdatedPage.Size = new System.Drawing.Size(1307, 378);
 	    this.FilesUpdatedPage.TabIndex = 2;
 	    this.FilesUpdatedPage.Text = "Updated";
 	    // 
@@ -773,14 +791,15 @@ namespace MultimediaDatabase
             this.PreviousValueColumnHeader,
             this.NewValueColumnHeader,
             this.IDcolumnHeader});
-	    this.UpdatedFilesListView.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+	    this.UpdatedFilesListView.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.UpdatedFilesListView.ForeColor = System.Drawing.Color.White;
 	    this.UpdatedFilesListView.FullRowSelect = true;
 	    this.UpdatedFilesListView.GridLines = true;
 	    this.UpdatedFilesListView.HideSelection = false;
-	    this.UpdatedFilesListView.Location = new System.Drawing.Point(6, 6);
+	    this.UpdatedFilesListView.Location = new System.Drawing.Point(7, 7);
+	    this.UpdatedFilesListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.UpdatedFilesListView.Name = "UpdatedFilesListView";
-	    this.UpdatedFilesListView.Size = new System.Drawing.Size(1111, 385);
+	    this.UpdatedFilesListView.Size = new System.Drawing.Size(1269, 461);
 	    this.UpdatedFilesListView.TabIndex = 1;
 	    this.UpdatedFilesListView.UseCompatibleStateImageBehavior = false;
 	    this.UpdatedFilesListView.View = System.Windows.Forms.View.Details;
@@ -817,9 +836,10 @@ namespace MultimediaDatabase
 	    this.ViewDatabaseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 	    this.ViewDatabaseButton.BackColor = System.Drawing.Color.DimGray;
 	    this.ViewDatabaseButton.ForeColor = System.Drawing.Color.White;
-	    this.ViewDatabaseButton.Location = new System.Drawing.Point(132, 609);
+	    this.ViewDatabaseButton.Location = new System.Drawing.Point(151, 731);
+	    this.ViewDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ViewDatabaseButton.Name = "ViewDatabaseButton";
-	    this.ViewDatabaseButton.Size = new System.Drawing.Size(135, 28);
+	    this.ViewDatabaseButton.Size = new System.Drawing.Size(154, 34);
 	    this.ViewDatabaseButton.TabIndex = 8;
 	    this.ViewDatabaseButton.Text = "View Database";
 	    this.ViewDatabaseButton.UseVisualStyleBackColor = false;
@@ -833,7 +853,8 @@ namespace MultimediaDatabase
             this.WindowMenu});
 	    this.MainMenu.Location = new System.Drawing.Point(0, 0);
 	    this.MainMenu.Name = "MainMenu";
-	    this.MainMenu.Size = new System.Drawing.Size(1196, 24);
+	    this.MainMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+	    this.MainMenu.Size = new System.Drawing.Size(1367, 26);
 	    this.MainMenu.TabIndex = 9;
 	    this.MainMenu.Text = "menuStrip1";
 	    // 
@@ -841,9 +862,10 @@ namespace MultimediaDatabase
 	    // 
 	    this.FileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ExitMenuItem});
+	    this.FileMenu.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.FileMenu.ForeColor = System.Drawing.Color.White;
 	    this.FileMenu.Name = "FileMenu";
-	    this.FileMenu.Size = new System.Drawing.Size(37, 20);
+	    this.FileMenu.Size = new System.Drawing.Size(52, 22);
 	    this.FileMenu.Text = "File";
 	    // 
 	    // ExitMenuItem
@@ -851,7 +873,7 @@ namespace MultimediaDatabase
 	    this.ExitMenuItem.BackColor = System.Drawing.Color.DimGray;
 	    this.ExitMenuItem.ForeColor = System.Drawing.Color.White;
 	    this.ExitMenuItem.Name = "ExitMenuItem";
-	    this.ExitMenuItem.Size = new System.Drawing.Size(93, 22);
+	    this.ExitMenuItem.Size = new System.Drawing.Size(108, 22);
 	    this.ExitMenuItem.Text = "E&xit";
 	    this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
 	    // 
@@ -862,9 +884,10 @@ namespace MultimediaDatabase
             this.CascadeMenuItem,
             this.ArrangeAllMenuItem,
             this.toolStripSeparator1});
+	    this.WindowMenu.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.WindowMenu.ForeColor = System.Drawing.Color.White;
 	    this.WindowMenu.Name = "WindowMenu";
-	    this.WindowMenu.Size = new System.Drawing.Size(63, 20);
+	    this.WindowMenu.Size = new System.Drawing.Size(68, 22);
 	    this.WindowMenu.Text = "&Window";
 	    // 
 	    // TileMenuItem
@@ -872,7 +895,7 @@ namespace MultimediaDatabase
 	    this.TileMenuItem.BackColor = System.Drawing.Color.DimGray;
 	    this.TileMenuItem.ForeColor = System.Drawing.Color.White;
 	    this.TileMenuItem.Name = "TileMenuItem";
-	    this.TileMenuItem.Size = new System.Drawing.Size(133, 22);
+	    this.TileMenuItem.Size = new System.Drawing.Size(164, 22);
 	    this.TileMenuItem.Text = "&Tile";
 	    // 
 	    // CascadeMenuItem
@@ -880,7 +903,7 @@ namespace MultimediaDatabase
 	    this.CascadeMenuItem.BackColor = System.Drawing.Color.DimGray;
 	    this.CascadeMenuItem.ForeColor = System.Drawing.Color.White;
 	    this.CascadeMenuItem.Name = "CascadeMenuItem";
-	    this.CascadeMenuItem.Size = new System.Drawing.Size(133, 22);
+	    this.CascadeMenuItem.Size = new System.Drawing.Size(164, 22);
 	    this.CascadeMenuItem.Text = "&Cascade";
 	    // 
 	    // ArrangeAllMenuItem
@@ -888,7 +911,7 @@ namespace MultimediaDatabase
 	    this.ArrangeAllMenuItem.BackColor = System.Drawing.Color.DimGray;
 	    this.ArrangeAllMenuItem.ForeColor = System.Drawing.Color.White;
 	    this.ArrangeAllMenuItem.Name = "ArrangeAllMenuItem";
-	    this.ArrangeAllMenuItem.Size = new System.Drawing.Size(133, 22);
+	    this.ArrangeAllMenuItem.Size = new System.Drawing.Size(164, 22);
 	    this.ArrangeAllMenuItem.Text = "&Arrange All";
 	    // 
 	    // toolStripSeparator1
@@ -896,7 +919,7 @@ namespace MultimediaDatabase
 	    this.toolStripSeparator1.BackColor = System.Drawing.Color.DimGray;
 	    this.toolStripSeparator1.ForeColor = System.Drawing.Color.White;
 	    this.toolStripSeparator1.Name = "toolStripSeparator1";
-	    this.toolStripSeparator1.Size = new System.Drawing.Size(130, 6);
+	    this.toolStripSeparator1.Size = new System.Drawing.Size(161, 6);
 	    // 
 	    // PlayFileButton
 	    // 
@@ -905,9 +928,10 @@ namespace MultimediaDatabase
 	    this.PlayFileButton.Enabled = false;
 	    this.PlayFileButton.ForeColor = System.Drawing.Color.White;
 	    this.PlayFileButton.Image = ((System.Drawing.Image)(resources.GetObject("PlayFileButton.Image")));
-	    this.PlayFileButton.Location = new System.Drawing.Point(273, 609);
+	    this.PlayFileButton.Location = new System.Drawing.Point(312, 731);
+	    this.PlayFileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.PlayFileButton.Name = "PlayFileButton";
-	    this.PlayFileButton.Size = new System.Drawing.Size(108, 28);
+	    this.PlayFileButton.Size = new System.Drawing.Size(123, 34);
 	    this.PlayFileButton.TabIndex = 13;
 	    this.PlayFileButton.Text = "Play";
 	    this.PlayFileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -921,11 +945,12 @@ namespace MultimediaDatabase
 	    this.ViewMediaInfoButton.Enabled = false;
 	    this.ViewMediaInfoButton.ForeColor = System.Drawing.Color.White;
 	    this.ViewMediaInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("ViewMediaInfoButton.Image")));
-	    this.ViewMediaInfoButton.Location = new System.Drawing.Point(398, 609);
+	    this.ViewMediaInfoButton.Location = new System.Drawing.Point(441, 731);
+	    this.ViewMediaInfoButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ViewMediaInfoButton.Name = "ViewMediaInfoButton";
-	    this.ViewMediaInfoButton.Size = new System.Drawing.Size(170, 28);
+	    this.ViewMediaInfoButton.Size = new System.Drawing.Size(191, 34);
 	    this.ViewMediaInfoButton.TabIndex = 12;
-	    this.ViewMediaInfoButton.Text = "View MediaInfo Raw Data";
+	    this.ViewMediaInfoButton.Text = "View MediaInfo ";
 	    this.ViewMediaInfoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 	    this.ViewMediaInfoButton.UseVisualStyleBackColor = false;
 	    this.ViewMediaInfoButton.Click += new System.EventHandler(this.ViewMediaInfoButton_Click);
@@ -933,9 +958,11 @@ namespace MultimediaDatabase
 	    // AddDatabaseButton
 	    // 
 	    this.AddDatabaseButton.BackColor = System.Drawing.Color.DimGray;
-	    this.AddDatabaseButton.Location = new System.Drawing.Point(416, 42);
+	    this.AddDatabaseButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+	    this.AddDatabaseButton.Location = new System.Drawing.Point(518, 50);
+	    this.AddDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.AddDatabaseButton.Name = "AddDatabaseButton";
-	    this.AddDatabaseButton.Size = new System.Drawing.Size(33, 23);
+	    this.AddDatabaseButton.Size = new System.Drawing.Size(38, 26);
 	    this.AddDatabaseButton.TabIndex = 14;
 	    this.AddDatabaseButton.Text = "+";
 	    this.AddDatabaseButton.UseVisualStyleBackColor = false;
@@ -944,9 +971,11 @@ namespace MultimediaDatabase
 	    // EditDatabaseButton
 	    // 
 	    this.EditDatabaseButton.BackColor = System.Drawing.Color.DimGray;
-	    this.EditDatabaseButton.Location = new System.Drawing.Point(338, 42);
+	    this.EditDatabaseButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+	    this.EditDatabaseButton.Location = new System.Drawing.Point(429, 50);
+	    this.EditDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.EditDatabaseButton.Name = "EditDatabaseButton";
-	    this.EditDatabaseButton.Size = new System.Drawing.Size(72, 23);
+	    this.EditDatabaseButton.Size = new System.Drawing.Size(82, 26);
 	    this.EditDatabaseButton.TabIndex = 15;
 	    this.EditDatabaseButton.Text = "Edit";
 	    this.EditDatabaseButton.UseVisualStyleBackColor = false;
@@ -958,9 +987,10 @@ namespace MultimediaDatabase
 	    this.AbortScanButton.BackColor = System.Drawing.Color.DimGray;
 	    this.AbortScanButton.ForeColor = System.Drawing.Color.White;
 	    this.AbortScanButton.Image = global::MultimediaDatabase.Properties.Resources.Red_Cross;
-	    this.AbortScanButton.Location = new System.Drawing.Point(583, 608);
+	    this.AbortScanButton.Location = new System.Drawing.Point(638, 731);
+	    this.AbortScanButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.AbortScanButton.Name = "AbortScanButton";
-	    this.AbortScanButton.Size = new System.Drawing.Size(130, 28);
+	    this.AbortScanButton.Size = new System.Drawing.Size(149, 34);
 	    this.AbortScanButton.TabIndex = 16;
 	    this.AbortScanButton.TabStop = false;
 	    this.AbortScanButton.Text = "Abort Scan";
@@ -971,10 +1001,10 @@ namespace MultimediaDatabase
 	    // 
 	    // TMainForm
 	    // 
-	    this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+	    this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
 	    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 	    this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-	    this.ClientSize = new System.Drawing.Size(1196, 661);
+	    this.ClientSize = new System.Drawing.Size(1367, 793);
 	    this.Controls.Add(this.AbortScanButton);
 	    this.Controls.Add(this.EditDatabaseButton);
 	    this.Controls.Add(this.AddDatabaseButton);
@@ -988,8 +1018,10 @@ namespace MultimediaDatabase
 	    this.Controls.Add(this.statusBar);
 	    this.Controls.Add(this.MainMenu);
 	    this.Controls.Add(this.ScanButton);
+	    this.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.ForeColor = System.Drawing.Color.White;
-	    this.MinimumSize = new System.Drawing.Size(1212, 700);
+	    this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.MinimumSize = new System.Drawing.Size(1383, 832);
 	    this.Name = "TMainForm";
 	    this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 	    this.Text = "Multimedia Database";

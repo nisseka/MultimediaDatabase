@@ -14,6 +14,7 @@ using Strings;
 using System.Globalization;
 using Stndrd;
 using MultimediaDatabase.Properties;
+using MediaInfoLib;
 
 namespace MultimediaDatabase
 {
@@ -100,13 +101,12 @@ namespace MultimediaDatabase
 	    FileReportListViewList.Add(DeletedFilesListView);
 	    FileReportListViewList.Add(UpdatedFilesListView);
 
-/*
-    //	    files.ScanForFiles("D:\\Spel", "*.exe;*.dll", true);
+  
 
-	    List<Object> list = new List<Object>();
-
-	    MyString.mysscanf("S02.85E45", "S%fE%d", ref list);
-*/
+	    /*
+			//	    mediaInfo.RawDataString = System.IO.File.ReadAllText(@"C:\Temp\The X Files - Fight the future.mkv.txt");
+			mediaInfo.ReadFromFile(@"E:\multimedia\Foul Play.mkv");
+	    */
 	}
 
 	~TMainForm()
@@ -150,7 +150,7 @@ namespace MultimediaDatabase
 
 	    TString strObj;
 	    TMySQLDataRow dr;
-	    MediaInfo mediaInfo;
+	    TMediaInfo mediaInfo = null;
 
 	    ListViewItem li;
 	    StringBuilder sb, sb2;
@@ -181,7 +181,6 @@ namespace MultimediaDatabase
 
 		    sb = new StringBuilder(path);
 		    sb2 = new StringBuilder();
-		    mediaInfo = new MediaInfo();
 
 		    c = CurrentDirs.Count;
 		    for (i = 0; i < c; i++)
@@ -217,22 +216,29 @@ namespace MultimediaDatabase
 			    id = dr.DWORDLONG(0);
 			    oldsizel = dr.DWORDLONG(FileSizeColumnIndex);
 
+			    prev_value_str = MyString.EmptyStr;
+			    new_value_str = MyString.EmptyStr;
+
 			    old_datetime = dr.StringByColumnName(Program.MySQLTableColumn_DateAndTime);
 			    old_url = dr.StringByColumnName(Program.MySQLTableColumn_URL);
 			    old_webshare_url = dr.StringByColumnName(Program.MySQLTableColumn_WebShareURL);
 
 			    what_changed_str = MyString.EmptyStr;
+			    str = dr.StringByColumnName(Resources.MySQLTableColumn_MediaInfoHumanReadable);
 
-			    if (oldsizel != sizel || old_datetime != datetime)
+			    if (oldsizel != sizel || old_datetime != datetime || str.Length == 0)
 			    {
+				mediaInfo = new TMediaInfo();
+
 				mediaInfo.ReadFromFile(parameter.FullName);
 
-				prev_value_str = dr.StringByColumnName(Program.MySQLTableColumn_MediaInfoRawData);
+				prev_value_str = dr.StringByColumnName(Resources.MySQLTableColumn_MediaInfoRawData);
 				new_value_str = mediaInfo.RawDataString;
 
 				if (new_value_str != prev_value_str)
 				{
-				    j = db.AddVariable(Program.MySQLTableColumn_MediaInfoRawData, mediaInfo.RawDataString);
+				    j = db.AddVariable(Resources.MySQLTableColumn_MediaInfoRawData, mediaInfo.RawDataString);
+				    j &= db.AddVariable(Resources.MySQLTableColumn_MediaInfoHumanReadable, mediaInfo.MediaInfoString);
 
 				    queryColumns.Clear();
 				    queryColumns.Add(Program.MySQLTableColumn_OverallBitRate, mediaInfo.OverallBitRate);
@@ -241,16 +247,17 @@ namespace MultimediaDatabase
 				    queryColumns.Add(Program.MySQLTableColumn_AudioCodec, mediaInfo.AudioCodec);
 				    queryColumns.Add(Program.MySQLTableColumn_AudioBitDepth, mediaInfo.AudioBitDepth);
 				    queryColumns.Add(Program.MySQLTableColumn_AudioBitRate, mediaInfo.AudioBitRate(0));
-				    queryColumns.Add(Program.MySQLTableColumn_MediaInfoRawData, "@MediaInfoRawData");
+				    queryColumns.Add(Resources.MySQLTableColumn_MediaInfoRawData, "@MediaInfoRawData");
 				    queryColumns.Add(Program.MySQLTableColumn_Duration, mediaInfo.Duration);
+				    queryColumns.Add(Resources.MySQLTableColumn_MediaInfoHumanReadable, "@MediaInfoHumanReadable");
 
-/*
-				    j &= db.ExecuteQuery("UPDATE {0} SET OverallBitRate={1},AudioSampleRate={2},AudioNumChannels={3},AudioBitRate={4},AudioCodec='{5}',AudioBitDepth={6} WHERE id={7}", CurrentTableName,
-						    mediaInfo.OverallBitRate, mediaInfo.AudioSampleRate, mediaInfo.AudioChannelCount, mediaInfo.AudioBitRate(0), mediaInfo.AudioCodec,
-						    mediaInfo.AudioBitDepth, id) > 0 ? true : false;
-				    j &= db.ExecuteQuery("UPDATE {0} SET MediaInfoRawData=@MediaInfoRawData,Duration={1} WHERE id={2}", CurrentTableName,
-						    mediaInfo.Duration, id) > 0 ? true : false;
-*/
+				    /*
+									j &= db.ExecuteQuery("UPDATE {0} SET OverallBitRate={1},AudioSampleRate={2},AudioNumChannels={3},AudioBitRate={4},AudioCodec='{5}',AudioBitDepth={6} WHERE id={7}", CurrentTableName,
+											mediaInfo.OverallBitRate, mediaInfo.AudioSampleRate, mediaInfo.AudioChannelCount, mediaInfo.AudioBitRate(0), mediaInfo.AudioCodec,
+											mediaInfo.AudioBitDepth, id) > 0 ? true : false;
+									j &= db.ExecuteQuery("UPDATE {0} SET MediaInfoRawData=@MediaInfoRawData,Duration={1} WHERE id={2}", CurrentTableName,
+											mediaInfo.Duration, id) > 0 ? true : false;
+				    */
 
 				    if (mediaInfo.VideoTracksCount > 0)
 				    {
@@ -273,10 +280,23 @@ namespace MultimediaDatabase
 				    }
 				}
 
+				if (str.Length == 0 && file_updated == false)
+				{
+				    queryColumns.Clear();
+				    queryColumns.Add(Resources.MySQLTableColumn_MediaInfoHumanReadable, "@MediaInfoHumanReadable");
+				    db.AddVariable(Resources.MySQLTableColumn_MediaInfoHumanReadable, mediaInfo.MediaInfoString);
+				    j = db.ExecuteUpdateQuery(CurrentTableName, queryColumns, id) > 0 ? true : false;
+
+				    if (j)
+				    {
+					Standard.StatusbarPrint(toolStripStatusLabel2, "Updated to new mediainfo on {0}...", filename);
+					file_updated = true;
+					what_changed_str = "Media Info";
+				    }
+				}
+				mediaInfo.CloseFile();
 			    }
 
-			    prev_value_str = MyString.EmptyStr;
-			    new_value_str = MyString.EmptyStr;
 
 			    if (oldsizel != sizel)
 			    {
@@ -397,7 +417,7 @@ namespace MultimediaDatabase
 			    {
 				artist = strs[0];
 				title = strs[1];
-				str = title;
+				str = string.Empty;
 			    }
 			    else
 			    {
@@ -457,6 +477,8 @@ namespace MultimediaDatabase
 
 			    }
 
+			    mediaInfo = new TMediaInfo();
+
 			    if (mediaInfo.ReadFromFile(parameter.FullName) == 0)
 				break;
 			    AddedFilesmediaInfosList.Add(mediaInfo);
@@ -469,7 +491,8 @@ namespace MultimediaDatabase
 				title = mediaInfo.ID3Title;
 			    }
 
-			    db.AddVariable(Program.MySQLTableColumn_MediaInfoRawData, mediaInfo.RawDataString);
+			    db.AddVariable(Resources.MySQLTableColumn_MediaInfoRawData, mediaInfo.RawDataString);
+			    db.AddVariable(Resources.MySQLTableColumn_MediaInfoHumanReadable, mediaInfo.MediaInfoString);
 
 			    /*
 							if (db.ExecuteQuery("INSERT INTO {0} (filename,path,filesize,{1},title,filetype,URL,WebShareURL,DateAndTime,MediaInfoRawData,Duration,OverallBitRate,AudioSampleRate,AudioNumChannels,AudioBitRate,AudioCodec,AudioBitDepth) VALUES ('{2}','{3}',{4},'{5}','{6}','{7}','{8}','{9}','{10}',@MediaInfoRawData,{11},{12},{13},{14},{15},'{16}',{17})",
@@ -487,7 +510,7 @@ namespace MultimediaDatabase
 			    queryColumns.Add(Program.MySQLTableColumn_URL, url);
 			    queryColumns.Add(Program.MySQLTableColumn_WebShareURL, webshare_url);
 			    queryColumns.Add(Program.MySQLTableColumn_DateAndTime, datetime);
-			    queryColumns.Add(Program.MySQLTableColumn_MediaInfoRawData, "@MediaInfoRawData");
+			    queryColumns.Add(Resources.MySQLTableColumn_MediaInfoRawData, "@MediaInfoRawData");
 			    queryColumns.Add(Program.MySQLTableColumn_Duration, mediaInfo.Duration);
 			    queryColumns.Add(Program.MySQLTableColumn_OverallBitRate, mediaInfo.OverallBitRate);
 			    queryColumns.Add(Program.MySQLTableColumn_AudioSampleRate, mediaInfo.AudioSampleRate);
@@ -495,6 +518,7 @@ namespace MultimediaDatabase
 			    queryColumns.Add(Program.MySQLTableColumn_AudioBitRate, mediaInfo.AudioBitRate(0));
 			    queryColumns.Add(Program.MySQLTableColumn_AudioCodec, mediaInfo.AudioCodec);
 			    queryColumns.Add(Program.MySQLTableColumn_AudioBitDepth, mediaInfo.AudioBitDepth);
+			    queryColumns.Add(Resources.MySQLTableColumn_MediaInfoHumanReadable, "@MediaInfoHumanReadable");
 
 			    if (db.ExecuteInsertQuery(CurrentTableName, queryColumns) > 0)
 			    {
@@ -560,6 +584,7 @@ namespace MultimediaDatabase
 				Standard.StatusbarPrint(toolStripStatusLabel2, "Added {0} to database..", filename);
 				Standard.StatusbarPrint(toolStripStatusLabel1, "{0}", id);
 			    }
+			    mediaInfo.CloseFile();
 			}
 		    }
 		    break;
@@ -584,8 +609,8 @@ namespace MultimediaDatabase
 
 			li = DeletedFilesListView.Items.Add("");
 
-			mediaInfo = new MediaInfo();
-			mediaInfo.RawDataString = dr.StringByColumnName(Program.MySQLTableColumn_MediaInfoRawData);
+			mediaInfo = new TMediaInfo();
+			mediaInfo.RawDataString = dr.StringByColumnName(Resources.MySQLTableColumn_MediaInfoRawData);
 
 			for (int ii = 0; ii < Program.NumColumns; ii++)
 			{
@@ -777,7 +802,7 @@ namespace MultimediaDatabase
 
 	private void ViewMediaInfoButton_Click(object sender, EventArgs e)
 	{
-	    MediaInfo mediaInfo;
+	    TMediaInfo mediaInfo;
 	    string fullfilename;
 	    TabPage activeTabPage = FileReportPageControl.SelectedTab;
 
@@ -798,8 +823,11 @@ namespace MultimediaDatabase
 		    else
 			fullfilename = Program.GetFullFileNameFromListItem(item);
 
-		    mediaInfo = (MediaInfo)item.Tag;
-		    Program.ViewMediaInfo(fullfilename, mediaInfo.RawDataStrings);
+		    mediaInfo = (TMediaInfo)item.Tag;
+		    if (mediaInfo.MediaInfoString.Length > 0)
+			Program.ViewMediaInfo(fullfilename, mediaInfo.MediaInfoString);
+		    else
+			Program.ViewMediaInfo(fullfilename, mediaInfo.RawDataStrings);
 		}
 
 	    }

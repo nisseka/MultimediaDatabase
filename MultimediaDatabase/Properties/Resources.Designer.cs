@@ -110,6 +110,25 @@ namespace MultimediaDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FileSize = File size
+        ///OverallBitRate = Overall bit rate
+        ///OverallBitRateMode = Overall bit rate mode
+        ///BitDepth = Bit depth
+        ///BitRate = Bit rate
+        ///DisplayAspectRatio = Display aspect ratio
+        ///FrameRateMode = Frame rate mode
+        ///FrameRate = Frame rate
+        ///Encoded_Application = Writing application
+        ///StreamSize = Stream size
+        ///SamplingRate = Sampling rate.
+        /// </summary>
+        public static string MediaInfoParameterDictionary {
+            get {
+                return ResourceManager.GetString("MediaInfoParameterDictionary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to filename.
         /// </summary>
         public static string MySQLTableColumn_Filename {
@@ -133,6 +152,15 @@ namespace MultimediaDatabase.Properties {
         public static string MySQLTableColumn_Filetype {
             get {
                 return ResourceManager.GetString("MySQLTableColumn_Filetype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MediaInfoHumanReadable.
+        /// </summary>
+        public static string MySQLTableColumn_MediaInfoHumanReadable {
+            get {
+                return ResourceManager.GetString("MySQLTableColumn_MediaInfoHumanReadable", resourceCulture);
             }
         }
         
