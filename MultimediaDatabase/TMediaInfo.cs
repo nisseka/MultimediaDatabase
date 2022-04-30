@@ -134,8 +134,9 @@ namespace MultimediaDatabase
 	    AudioTrackXMLStrings = new TListOfStrings();
 	    SubtitleTrackXMLStrings = new TListOfStrings();
 
-	    AudioCodec = MyString.EmptyStr;
-	    VideoCodec = MyString.EmptyStr;
+	    AudioCodec = string.Empty;
+	    VideoCodec = string.Empty;
+	    mediaInfoString = string.Empty;
 
 	    // Add parameter translators:
 	    // Read from resource file MediaInfoParameterDictionary.txt
@@ -246,7 +247,7 @@ namespace MultimediaDatabase
 	    }
 	    else
 	    {
-		FRawDataString = MyString.EmptyStr;
+		FRawDataString = string.Empty;
 	    }
 
 	    return r;
@@ -778,7 +779,7 @@ namespace MultimediaDatabase
 	private string GetXMLElementContent(string aXMLString, string aXMLElement, string aXMLElementAttributes)
 	{
 	    int i, i2;
-	    string r = MyString.EmptyStr;
+	    string r = string.Empty;
 
 	    if (aXMLString.Length > 0)
 	    {

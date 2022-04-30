@@ -103,10 +103,10 @@ namespace MultimediaDatabase
 
   
 
-	    /*
-			//	    mediaInfo.RawDataString = System.IO.File.ReadAllText(@"C:\Temp\The X Files - Fight the future.mkv.txt");
-			mediaInfo.ReadFromFile(@"E:\multimedia\Foul Play.mkv");
-	    */
+/*
+//	    mediaInfo.RawDataString = System.IO.File.ReadAllText(@"C:\Temp\The X Files - Fight the future.mkv.txt");
+	    mediaInfo.ReadFromFile(@"E:\multimedia\Foul Play.mkv");
+*/
 	}
 
 	~TMainForm()
