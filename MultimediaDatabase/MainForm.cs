@@ -15,6 +15,7 @@ using System.Globalization;
 using Stndrd;
 using MultimediaDatabase.Properties;
 using MediaInfoLib;
+using System.IO;
 
 namespace MultimediaDatabase
 {
@@ -116,7 +117,7 @@ namespace MultimediaDatabase
 
 	private void scanButtonClick(object sender, EventArgs e)
 	{
-	    int i, c, c2 = 0, c3;
+	    int c, c2 = 0, c3;
 	    int filesCount;
 	    string exclude = "";
 
@@ -127,7 +128,7 @@ namespace MultimediaDatabase
 
 	    AbortScan = false;
 	    AbortScanButton.Visible = true;
-	    filesCount = File.SearchFiles(currentDatabase.Directories, currentDatabase.SearchForFileTypes, exclude, true, searchCallback, false);
+	    filesCount = Files.File.SearchFiles(currentDatabase.Directories, currentDatabase.SearchForFileTypes, exclude, true, searchCallback, false);
 
 	    c = AddedFilesListView.Items.Count;
 	    c2 = DeletedFilesListView.Items.Count;
@@ -142,10 +143,10 @@ namespace MultimediaDatabase
 	{
 	    int i, c;
 	    bool j;
-	    bool file_updated = false, nd = false, file_found = false;
+	    bool file_updated = false, file_found = false;
 	    ulong id, sizel, oldsizel;
 	    string str, filename, path, path2, datetime, sizeStr, url, webshare_url, ext;
-	    string artist, title, name, old_datetime, old_url, old_webshare_url;
+	    string artist, title, old_datetime, old_url, old_webshare_url;
 	    string what_changed_str, prev_value_str, new_value_str, filetype;
 
 	    TString strObj;
@@ -636,8 +637,7 @@ namespace MultimediaDatabase
 	private void MainForm_Shown(object sender, EventArgs e)
 	{
 	    TMySQLDataRow dr;
-	    int i, c, r;
-	    string str;
+	    int c, r;
 
 	    r = MySQL.ConnectToMySQLServer(db, "mysql.wpnet.se", "stefan", "piU9Jfdj6W^*BfG", "multimediadatabase");
 
@@ -1003,6 +1003,46 @@ namespace MultimediaDatabase
 	{
 	    AbortScan = true; 
 	}
+
+	private void DumpColumnSizeButton_Click(object sender, EventArgs e)
+	{
+	    TListOfStrings columnsizes = new TListOfStrings();
+	    string listViewName;
+	    ListView listView;
+
+	    if (FileReportPageControl.SelectedTab == FilesAddedPage)
+	    {
+		listView = AddedFilesListView;
+		listViewName = listView.Name;
+	    }
+	    else
+	    if (FileReportPageControl.SelectedTab == FilesDeletedPage)
+	    {
+		listView = DeletedFilesListView;
+		listViewName = listView.Name;
+	    }
+	    else
+	    {
+		listView = null;
+		listViewName = string.Empty;
+	    }
+
+	    if (listView is not null)
+	    {
+		string filename = String.Format("{0}\\ListView{1}Columns.txt", Directory.GetCurrentDirectory(), listViewName);
+
+		columnsizes.AddFormatted("ListView {0} Columns:", listViewName);
+
+		ListView.ColumnHeaderCollection columns = listView.Columns;
+		foreach (ColumnHeader item in columns)
+		{
+		    columnsizes.AddFormatted("Column {0}: Width={1}", item.Text, item.Width);
+		}
+
+		columnsizes.WriteToFile(filename);
+	    }
+
+		}
     }
 
     partial class Program

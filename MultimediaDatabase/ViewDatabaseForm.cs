@@ -198,7 +198,6 @@ namespace MultimediaDatabase
 	private void DumpColumnSizeButton_Click(object sender, EventArgs e)
 	{
 	    TListOfStrings columnsizes = new TListOfStrings();
-	    string str;
 	    string filename = String.Format("{0}\\ListView{1}Columns.txt", Directory.GetCurrentDirectory(), FilesListView.Name);
 
 	    columnsizes.AddFormatted("ListView {0} Columns:",FilesListView.Name);

@@ -79,7 +79,7 @@ namespace MultimediaDatabase
 	    this.FilesAddedAudioChannelPositionsColumnHeader = new System.Windows.Forms.ColumnHeader();
 	    this.FilesDeletedPage = new System.Windows.Forms.TabPage();
 	    this.DeletedFilesListView = new System.Windows.Forms.ListView();
-	    this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+	    this.FilesDeletedTitleColumnHeader = new System.Windows.Forms.ColumnHeader();
 	    this.FilesDeletedArtistColumnHeader = new System.Windows.Forms.ColumnHeader();
 	    this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
 	    this.FilesDeletedSizeColumnHeader = new System.Windows.Forms.ColumnHeader();
@@ -129,6 +129,7 @@ namespace MultimediaDatabase
 	    this.AddDatabaseButton = new System.Windows.Forms.Button();
 	    this.EditDatabaseButton = new System.Windows.Forms.Button();
 	    this.AbortScanButton = new System.Windows.Forms.Button();
+	    this.DumpColumnSizeButton = new System.Windows.Forms.Button();
 	    this.statusBar.SuspendLayout();
 	    this.DatabaseDirectoriesGroupBox.SuspendLayout();
 	    this.FileReportPageControl.SuspendLayout();
@@ -143,7 +144,7 @@ namespace MultimediaDatabase
 	    this.ScanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 	    this.ScanButton.BackColor = System.Drawing.Color.DimGray;
 	    this.ScanButton.ForeColor = System.Drawing.Color.White;
-	    this.ScanButton.Location = new System.Drawing.Point(24, 731);
+	    this.ScanButton.Location = new System.Drawing.Point(24, 835);
 	    this.ScanButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ScanButton.Name = "ScanButton";
 	    this.ScanButton.Size = new System.Drawing.Size(120, 34);
@@ -157,10 +158,10 @@ namespace MultimediaDatabase
 	    this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-	    this.statusBar.Location = new System.Drawing.Point(0, 767);
+	    this.statusBar.Location = new System.Drawing.Point(0, 871);
 	    this.statusBar.Name = "statusBar";
 	    this.statusBar.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-	    this.statusBar.Size = new System.Drawing.Size(1367, 26);
+	    this.statusBar.Size = new System.Drawing.Size(1560, 26);
 	    this.statusBar.TabIndex = 3;
 	    this.statusBar.Text = "statusStrip1";
 	    // 
@@ -196,7 +197,7 @@ namespace MultimediaDatabase
 	    this.DatabaseDirectoriesGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DatabaseDirectoriesGroupBox.Name = "DatabaseDirectoriesGroupBox";
 	    this.DatabaseDirectoriesGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-	    this.DatabaseDirectoriesGroupBox.Size = new System.Drawing.Size(1315, 192);
+	    this.DatabaseDirectoriesGroupBox.Size = new System.Drawing.Size(1508, 192);
 	    this.DatabaseDirectoriesGroupBox.TabIndex = 4;
 	    this.DatabaseDirectoriesGroupBox.TabStop = false;
 	    this.DatabaseDirectoriesGroupBox.Text = "Database Directories:";
@@ -206,7 +207,7 @@ namespace MultimediaDatabase
 	    this.ClearDirectoriesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 	    this.ClearDirectoriesButton.BackColor = System.Drawing.Color.DimGray;
 	    this.ClearDirectoriesButton.Enabled = false;
-	    this.ClearDirectoriesButton.Location = new System.Drawing.Point(1213, 131);
+	    this.ClearDirectoriesButton.Location = new System.Drawing.Point(1406, 131);
 	    this.ClearDirectoriesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ClearDirectoriesButton.Name = "ClearDirectoriesButton";
 	    this.ClearDirectoriesButton.Size = new System.Drawing.Size(86, 28);
@@ -220,7 +221,7 @@ namespace MultimediaDatabase
 	    this.DeleteSelectedDirectoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 	    this.DeleteSelectedDirectoryButton.BackColor = System.Drawing.Color.DimGray;
 	    this.DeleteSelectedDirectoryButton.Enabled = false;
-	    this.DeleteSelectedDirectoryButton.Location = new System.Drawing.Point(1213, 96);
+	    this.DeleteSelectedDirectoryButton.Location = new System.Drawing.Point(1406, 96);
 	    this.DeleteSelectedDirectoryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DeleteSelectedDirectoryButton.Name = "DeleteSelectedDirectoryButton";
 	    this.DeleteSelectedDirectoryButton.Size = new System.Drawing.Size(86, 28);
@@ -234,7 +235,7 @@ namespace MultimediaDatabase
 	    this.EditSelectedDirectoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 	    this.EditSelectedDirectoryButton.BackColor = System.Drawing.Color.DimGray;
 	    this.EditSelectedDirectoryButton.Enabled = false;
-	    this.EditSelectedDirectoryButton.Location = new System.Drawing.Point(1213, 61);
+	    this.EditSelectedDirectoryButton.Location = new System.Drawing.Point(1406, 61);
 	    this.EditSelectedDirectoryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.EditSelectedDirectoryButton.Name = "EditSelectedDirectoryButton";
 	    this.EditSelectedDirectoryButton.Size = new System.Drawing.Size(86, 28);
@@ -248,7 +249,7 @@ namespace MultimediaDatabase
 	    this.AddDirectoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 	    this.AddDirectoryButton.BackColor = System.Drawing.Color.DimGray;
 	    this.AddDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-	    this.AddDirectoryButton.Location = new System.Drawing.Point(1213, 26);
+	    this.AddDirectoryButton.Location = new System.Drawing.Point(1406, 26);
 	    this.AddDirectoryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.AddDirectoryButton.Name = "AddDirectoryButton";
 	    this.AddDirectoryButton.Size = new System.Drawing.Size(86, 28);
@@ -276,7 +277,7 @@ namespace MultimediaDatabase
 	    this.DatabaseDirectoriesListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DatabaseDirectoriesListView.MultiSelect = false;
 	    this.DatabaseDirectoriesListView.Name = "DatabaseDirectoriesListView";
-	    this.DatabaseDirectoriesListView.Size = new System.Drawing.Size(1185, 158);
+	    this.DatabaseDirectoriesListView.Size = new System.Drawing.Size(1378, 158);
 	    this.DatabaseDirectoriesListView.TabIndex = 0;
 	    this.DatabaseDirectoriesListView.UseCompatibleStateImageBehavior = false;
 	    this.DatabaseDirectoriesListView.View = System.Windows.Forms.View.Details;
@@ -336,7 +337,7 @@ namespace MultimediaDatabase
 	    this.FileReportPageControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FileReportPageControl.Name = "FileReportPageControl";
 	    this.FileReportPageControl.SelectedIndex = 0;
-	    this.FileReportPageControl.Size = new System.Drawing.Size(1315, 409);
+	    this.FileReportPageControl.Size = new System.Drawing.Size(1508, 513);
 	    this.FileReportPageControl.TabIndex = 7;
 	    this.FileReportPageControl.SelectedIndexChanged += new System.EventHandler(this.FileReportPageControl_SelectedIndexChanged);
 	    // 
@@ -349,7 +350,7 @@ namespace MultimediaDatabase
 	    this.FilesAddedPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FilesAddedPage.Name = "FilesAddedPage";
 	    this.FilesAddedPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-	    this.FilesAddedPage.Size = new System.Drawing.Size(1307, 378);
+	    this.FilesAddedPage.Size = new System.Drawing.Size(1500, 482);
 	    this.FilesAddedPage.TabIndex = 0;
 	    this.FilesAddedPage.Text = "Files Added";
 	    // 
@@ -396,7 +397,7 @@ namespace MultimediaDatabase
 	    this.AddedFilesListView.Location = new System.Drawing.Point(7, 7);
 	    this.AddedFilesListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.AddedFilesListView.Name = "AddedFilesListView";
-	    this.AddedFilesListView.Size = new System.Drawing.Size(1295, 357);
+	    this.AddedFilesListView.Size = new System.Drawing.Size(1488, 467);
 	    this.AddedFilesListView.TabIndex = 2;
 	    this.AddedFilesListView.UseCompatibleStateImageBehavior = false;
 	    this.AddedFilesListView.View = System.Windows.Forms.View.Details;
@@ -411,7 +412,7 @@ namespace MultimediaDatabase
 	    // FilesAddedArtistColumnHeader
 	    // 
 	    this.FilesAddedArtistColumnHeader.Text = "Artist";
-	    this.FilesAddedArtistColumnHeader.Width = 160;
+	    this.FilesAddedArtistColumnHeader.Width = 200;
 	    // 
 	    // FilesAddedFilenameColumnHeader
 	    // 
@@ -422,19 +423,19 @@ namespace MultimediaDatabase
 	    // 
 	    this.FilesAddedSizeColumnHeader.Text = "Size";
 	    this.FilesAddedSizeColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesAddedSizeColumnHeader.Width = 75;
+	    this.FilesAddedSizeColumnHeader.Width = 140;
 	    // 
 	    // FilesAddedDurationColumnHeader
 	    // 
 	    this.FilesAddedDurationColumnHeader.Text = "Duration";
 	    this.FilesAddedDurationColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesAddedDurationColumnHeader.Width = 110;
+	    this.FilesAddedDurationColumnHeader.Width = 153;
 	    // 
 	    // FilesAddedOverallBitrateColumnHeader
 	    // 
 	    this.FilesAddedOverallBitrateColumnHeader.Text = "Overall BitRate";
 	    this.FilesAddedOverallBitrateColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesAddedOverallBitrateColumnHeader.Width = 90;
+	    this.FilesAddedOverallBitrateColumnHeader.Width = 150;
 	    // 
 	    // FilesAddedTypeColumnHeader
 	    // 
@@ -444,28 +445,28 @@ namespace MultimediaDatabase
 	    // FilesAddedVideoFormatColumnHeader
 	    // 
 	    this.FilesAddedVideoFormatColumnHeader.Text = "Video Format";
-	    this.FilesAddedVideoFormatColumnHeader.Width = 160;
+	    this.FilesAddedVideoFormatColumnHeader.Width = 202;
 	    // 
 	    // FilesAddedResolutionColumnHeader
 	    // 
 	    this.FilesAddedResolutionColumnHeader.Text = "Resolution";
-	    this.FilesAddedResolutionColumnHeader.Width = 80;
+	    this.FilesAddedResolutionColumnHeader.Width = 115;
 	    // 
 	    // FilesAddedVideoBitRateColumnHeader
 	    // 
 	    this.FilesAddedVideoBitRateColumnHeader.Text = "Video BitRate";
 	    this.FilesAddedVideoBitRateColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesAddedVideoBitRateColumnHeader.Width = 95;
+	    this.FilesAddedVideoBitRateColumnHeader.Width = 151;
 	    // 
 	    // FilesAddedFrameRateColumnHeader
 	    // 
 	    this.FilesAddedFrameRateColumnHeader.Text = "FrameRate";
-	    this.FilesAddedFrameRateColumnHeader.Width = 80;
+	    this.FilesAddedFrameRateColumnHeader.Width = 110;
 	    // 
 	    // FilesAddedAspectRatioColumnHeader
 	    // 
 	    this.FilesAddedAspectRatioColumnHeader.Text = "Aspect Ratio";
-	    this.FilesAddedAspectRatioColumnHeader.Width = 91;
+	    this.FilesAddedAspectRatioColumnHeader.Width = 136;
 	    // 
 	    // FilesAddedAudioFormatColumnHeader
 	    // 
@@ -476,43 +477,43 @@ namespace MultimediaDatabase
 	    // 
 	    this.FilesAddedAudioBitRateColumnHeader.Text = "Audio Bitrate";
 	    this.FilesAddedAudioBitRateColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesAddedAudioBitRateColumnHeader.Width = 104;
+	    this.FilesAddedAudioBitRateColumnHeader.Width = 142;
 	    // 
 	    // FilesAddedAudioChannelsColumnHeader
 	    // 
 	    this.FilesAddedAudioChannelsColumnHeader.Text = "Audio Channels";
-	    this.FilesAddedAudioChannelsColumnHeader.Width = 110;
+	    this.FilesAddedAudioChannelsColumnHeader.Width = 143;
 	    // 
 	    // FilesAddedAudioSampleRateColumnHeader
 	    // 
 	    this.FilesAddedAudioSampleRateColumnHeader.Text = "Audio SampleRate";
-	    this.FilesAddedAudioSampleRateColumnHeader.Width = 110;
+	    this.FilesAddedAudioSampleRateColumnHeader.Width = 175;
 	    // 
 	    // FilesAddedAudioBitDepthColumnHeader
 	    // 
 	    this.FilesAddedAudioBitDepthColumnHeader.Text = "Audio Bit Depth";
 	    this.FilesAddedAudioBitDepthColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesAddedAudioBitDepthColumnHeader.Width = 118;
+	    this.FilesAddedAudioBitDepthColumnHeader.Width = 146;
 	    // 
 	    // FilesAddedPathColumnHeader
 	    // 
 	    this.FilesAddedPathColumnHeader.Text = "Path";
-	    this.FilesAddedPathColumnHeader.Width = 219;
+	    this.FilesAddedPathColumnHeader.Width = 380;
 	    // 
 	    // FilesAddedURLColumnHeader
 	    // 
 	    this.FilesAddedURLColumnHeader.Text = "URL";
-	    this.FilesAddedURLColumnHeader.Width = 244;
+	    this.FilesAddedURLColumnHeader.Width = 380;
 	    // 
 	    // FilesAddedWebshareURLColumnHeader
 	    // 
 	    this.FilesAddedWebshareURLColumnHeader.Text = "WebShareURL";
-	    this.FilesAddedWebshareURLColumnHeader.Width = 244;
+	    this.FilesAddedWebshareURLColumnHeader.Width = 380;
 	    // 
 	    // FilesAddedDateTimeColumnHeader
 	    // 
 	    this.FilesAddedDateTimeColumnHeader.Text = "Date & Time";
-	    this.FilesAddedDateTimeColumnHeader.Width = 126;
+	    this.FilesAddedDateTimeColumnHeader.Width = 175;
 	    // 
 	    // FilesAddedIDColumnHeader
 	    // 
@@ -521,37 +522,37 @@ namespace MultimediaDatabase
 	    // FilesAddedNbVideoTracksColumnHeader
 	    // 
 	    this.FilesAddedNbVideoTracksColumnHeader.Text = "# Video Tracks";
-	    this.FilesAddedNbVideoTracksColumnHeader.Width = 90;
+	    this.FilesAddedNbVideoTracksColumnHeader.Width = 145;
 	    // 
 	    // FilesAddedNbAudioTracksColumnHeader
 	    // 
 	    this.FilesAddedNbAudioTracksColumnHeader.Text = "# Audio Tracks";
-	    this.FilesAddedNbAudioTracksColumnHeader.Width = 90;
+	    this.FilesAddedNbAudioTracksColumnHeader.Width = 136;
 	    // 
 	    // FilesAddedNbSubTitleTracksColumnHeader
 	    // 
 	    this.FilesAddedNbSubTitleTracksColumnHeader.Text = "# Subititle Tracks";
-	    this.FilesAddedNbSubTitleTracksColumnHeader.Width = 107;
+	    this.FilesAddedNbSubTitleTracksColumnHeader.Width = 175;
 	    // 
 	    // FilesAddedVideoBitRateModeColumnHeader
 	    // 
 	    this.FilesAddedVideoBitRateModeColumnHeader.Text = "Video BitRate Mode";
-	    this.FilesAddedVideoBitRateModeColumnHeader.Width = 125;
+	    this.FilesAddedVideoBitRateModeColumnHeader.Width = 168;
 	    // 
 	    // FilesAddedAudioBitRateModeColumnHeader
 	    // 
 	    this.FilesAddedAudioBitRateModeColumnHeader.Text = "Audio BitRate Mode";
-	    this.FilesAddedAudioBitRateModeColumnHeader.Width = 133;
+	    this.FilesAddedAudioBitRateModeColumnHeader.Width = 168;
 	    // 
 	    // FilesAddedVideoChannelLayoutColumnHeader
 	    // 
 	    this.FilesAddedVideoChannelLayoutColumnHeader.Text = "Audio Channel Layout";
-	    this.FilesAddedVideoChannelLayoutColumnHeader.Width = 140;
+	    this.FilesAddedVideoChannelLayoutColumnHeader.Width = 186;
 	    // 
 	    // FilesAddedAudioChannelPositionsColumnHeader
 	    // 
 	    this.FilesAddedAudioChannelPositionsColumnHeader.Text = "Audio Channel Positions";
-	    this.FilesAddedAudioChannelPositionsColumnHeader.Width = 157;
+	    this.FilesAddedAudioChannelPositionsColumnHeader.Width = 260;
 	    // 
 	    // FilesDeletedPage
 	    // 
@@ -562,7 +563,7 @@ namespace MultimediaDatabase
 	    this.FilesDeletedPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FilesDeletedPage.Name = "FilesDeletedPage";
 	    this.FilesDeletedPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-	    this.FilesDeletedPage.Size = new System.Drawing.Size(1307, 378);
+	    this.FilesDeletedPage.Size = new System.Drawing.Size(1500, 482);
 	    this.FilesDeletedPage.TabIndex = 1;
 	    this.FilesDeletedPage.Text = "Deleted";
 	    // 
@@ -573,7 +574,7 @@ namespace MultimediaDatabase
             | System.Windows.Forms.AnchorStyles.Right)));
 	    this.DeletedFilesListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
 	    this.DeletedFilesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
+            this.FilesDeletedTitleColumnHeader,
             this.FilesDeletedArtistColumnHeader,
             this.columnHeader3,
             this.FilesDeletedSizeColumnHeader,
@@ -609,22 +610,22 @@ namespace MultimediaDatabase
 	    this.DeletedFilesListView.Location = new System.Drawing.Point(7, 7);
 	    this.DeletedFilesListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.DeletedFilesListView.Name = "DeletedFilesListView";
-	    this.DeletedFilesListView.Size = new System.Drawing.Size(1270, 417);
+	    this.DeletedFilesListView.Size = new System.Drawing.Size(1487, 467);
 	    this.DeletedFilesListView.TabIndex = 3;
 	    this.DeletedFilesListView.UseCompatibleStateImageBehavior = false;
 	    this.DeletedFilesListView.View = System.Windows.Forms.View.Details;
 	    this.DeletedFilesListView.SelectedIndexChanged += new System.EventHandler(this.FilesListView_SelectedIndexChanged);
 	    this.DeletedFilesListView.DoubleClick += new System.EventHandler(this.FilesListView_DoubleClick);
 	    // 
-	    // columnHeader1
+	    // FilesDeletedTitleColumnHeader
 	    // 
-	    this.columnHeader1.Text = "Title";
-	    this.columnHeader1.Width = 300;
+	    this.FilesDeletedTitleColumnHeader.Text = "Title";
+	    this.FilesDeletedTitleColumnHeader.Width = 300;
 	    // 
 	    // FilesDeletedArtistColumnHeader
 	    // 
 	    this.FilesDeletedArtistColumnHeader.Text = "Artist";
-	    this.FilesDeletedArtistColumnHeader.Width = 160;
+	    this.FilesDeletedArtistColumnHeader.Width = 200;
 	    // 
 	    // columnHeader3
 	    // 
@@ -635,19 +636,19 @@ namespace MultimediaDatabase
 	    // 
 	    this.FilesDeletedSizeColumnHeader.Text = "Size";
 	    this.FilesDeletedSizeColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.FilesDeletedSizeColumnHeader.Width = 80;
+	    this.FilesDeletedSizeColumnHeader.Width = 140;
 	    // 
 	    // columnHeader5
 	    // 
 	    this.columnHeader5.Text = "Duration";
 	    this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.columnHeader5.Width = 110;
+	    this.columnHeader5.Width = 153;
 	    // 
 	    // columnHeader6
 	    // 
 	    this.columnHeader6.Text = "Overall BitRate";
 	    this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.columnHeader6.Width = 90;
+	    this.columnHeader6.Width = 150;
 	    // 
 	    // columnHeader7
 	    // 
@@ -657,28 +658,28 @@ namespace MultimediaDatabase
 	    // columnHeader8
 	    // 
 	    this.columnHeader8.Text = "Video Format";
-	    this.columnHeader8.Width = 160;
+	    this.columnHeader8.Width = 202;
 	    // 
 	    // columnHeader9
 	    // 
 	    this.columnHeader9.Text = "Resolution";
-	    this.columnHeader9.Width = 80;
+	    this.columnHeader9.Width = 115;
 	    // 
 	    // columnHeader10
 	    // 
 	    this.columnHeader10.Text = "Video BitRate";
 	    this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.columnHeader10.Width = 95;
+	    this.columnHeader10.Width = 151;
 	    // 
 	    // columnHeader11
 	    // 
 	    this.columnHeader11.Text = "FrameRate";
-	    this.columnHeader11.Width = 80;
+	    this.columnHeader11.Width = 110;
 	    // 
 	    // columnHeader12
 	    // 
 	    this.columnHeader12.Text = "Aspect Ratio";
-	    this.columnHeader12.Width = 91;
+	    this.columnHeader12.Width = 136;
 	    // 
 	    // columnHeader13
 	    // 
@@ -689,43 +690,43 @@ namespace MultimediaDatabase
 	    // 
 	    this.columnHeader14.Text = "Audio Bitrate";
 	    this.columnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.columnHeader14.Width = 105;
+	    this.columnHeader14.Width = 142;
 	    // 
 	    // columnHeader15
 	    // 
 	    this.columnHeader15.Text = "Audio Channels";
-	    this.columnHeader15.Width = 110;
+	    this.columnHeader15.Width = 143;
 	    // 
 	    // columnHeader16
 	    // 
 	    this.columnHeader16.Text = "Audio SampleRate";
-	    this.columnHeader16.Width = 110;
+	    this.columnHeader16.Width = 175;
 	    // 
 	    // columnHeader17
 	    // 
 	    this.columnHeader17.Text = "Audio Bit Depth";
 	    this.columnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-	    this.columnHeader17.Width = 118;
+	    this.columnHeader17.Width = 146;
 	    // 
 	    // columnHeader18
 	    // 
 	    this.columnHeader18.Text = "Path";
-	    this.columnHeader18.Width = 219;
+	    this.columnHeader18.Width = 380;
 	    // 
 	    // columnHeader19
 	    // 
 	    this.columnHeader19.Text = "URL";
-	    this.columnHeader19.Width = 244;
+	    this.columnHeader19.Width = 380;
 	    // 
 	    // columnHeader20
 	    // 
 	    this.columnHeader20.Text = "WebShareURL";
-	    this.columnHeader20.Width = 244;
+	    this.columnHeader20.Width = 380;
 	    // 
 	    // columnHeader21
 	    // 
 	    this.columnHeader21.Text = "Date & Time";
-	    this.columnHeader21.Width = 126;
+	    this.columnHeader21.Width = 175;
 	    // 
 	    // columnHeader22
 	    // 
@@ -734,37 +735,37 @@ namespace MultimediaDatabase
 	    // columnHeader23
 	    // 
 	    this.columnHeader23.Text = "# Video Tracks";
-	    this.columnHeader23.Width = 90;
+	    this.columnHeader23.Width = 145;
 	    // 
 	    // columnHeader24
 	    // 
 	    this.columnHeader24.Text = "# Audio Tracks";
-	    this.columnHeader24.Width = 90;
+	    this.columnHeader24.Width = 136;
 	    // 
 	    // columnHeader25
 	    // 
 	    this.columnHeader25.Text = "# Subititle Tracks";
-	    this.columnHeader25.Width = 107;
+	    this.columnHeader25.Width = 175;
 	    // 
 	    // columnHeader26
 	    // 
 	    this.columnHeader26.Text = "Video BitRate Mode";
-	    this.columnHeader26.Width = 125;
+	    this.columnHeader26.Width = 168;
 	    // 
 	    // columnHeader27
 	    // 
 	    this.columnHeader27.Text = "Audio BitRate Mode";
-	    this.columnHeader27.Width = 133;
+	    this.columnHeader27.Width = 168;
 	    // 
 	    // columnHeader28
 	    // 
 	    this.columnHeader28.Text = "Audio Channel Layout";
-	    this.columnHeader28.Width = 140;
+	    this.columnHeader28.Width = 186;
 	    // 
 	    // columnHeader29
 	    // 
 	    this.columnHeader29.Text = "Audio Channel Positions";
-	    this.columnHeader29.Width = 157;
+	    this.columnHeader29.Width = 260;
 	    // 
 	    // FilesUpdatedPage
 	    // 
@@ -775,7 +776,7 @@ namespace MultimediaDatabase
 	    this.FilesUpdatedPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.FilesUpdatedPage.Name = "FilesUpdatedPage";
 	    this.FilesUpdatedPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-	    this.FilesUpdatedPage.Size = new System.Drawing.Size(1307, 378);
+	    this.FilesUpdatedPage.Size = new System.Drawing.Size(1423, 454);
 	    this.FilesUpdatedPage.TabIndex = 2;
 	    this.FilesUpdatedPage.Text = "Updated";
 	    // 
@@ -836,7 +837,7 @@ namespace MultimediaDatabase
 	    this.ViewDatabaseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 	    this.ViewDatabaseButton.BackColor = System.Drawing.Color.DimGray;
 	    this.ViewDatabaseButton.ForeColor = System.Drawing.Color.White;
-	    this.ViewDatabaseButton.Location = new System.Drawing.Point(151, 731);
+	    this.ViewDatabaseButton.Location = new System.Drawing.Point(151, 835);
 	    this.ViewDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ViewDatabaseButton.Name = "ViewDatabaseButton";
 	    this.ViewDatabaseButton.Size = new System.Drawing.Size(154, 34);
@@ -854,7 +855,7 @@ namespace MultimediaDatabase
 	    this.MainMenu.Location = new System.Drawing.Point(0, 0);
 	    this.MainMenu.Name = "MainMenu";
 	    this.MainMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-	    this.MainMenu.Size = new System.Drawing.Size(1367, 26);
+	    this.MainMenu.Size = new System.Drawing.Size(1560, 26);
 	    this.MainMenu.TabIndex = 9;
 	    this.MainMenu.Text = "menuStrip1";
 	    // 
@@ -928,7 +929,7 @@ namespace MultimediaDatabase
 	    this.PlayFileButton.Enabled = false;
 	    this.PlayFileButton.ForeColor = System.Drawing.Color.White;
 	    this.PlayFileButton.Image = ((System.Drawing.Image)(resources.GetObject("PlayFileButton.Image")));
-	    this.PlayFileButton.Location = new System.Drawing.Point(312, 731);
+	    this.PlayFileButton.Location = new System.Drawing.Point(312, 835);
 	    this.PlayFileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.PlayFileButton.Name = "PlayFileButton";
 	    this.PlayFileButton.Size = new System.Drawing.Size(123, 34);
@@ -945,7 +946,7 @@ namespace MultimediaDatabase
 	    this.ViewMediaInfoButton.Enabled = false;
 	    this.ViewMediaInfoButton.ForeColor = System.Drawing.Color.White;
 	    this.ViewMediaInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("ViewMediaInfoButton.Image")));
-	    this.ViewMediaInfoButton.Location = new System.Drawing.Point(441, 731);
+	    this.ViewMediaInfoButton.Location = new System.Drawing.Point(441, 835);
 	    this.ViewMediaInfoButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.ViewMediaInfoButton.Name = "ViewMediaInfoButton";
 	    this.ViewMediaInfoButton.Size = new System.Drawing.Size(191, 34);
@@ -987,7 +988,7 @@ namespace MultimediaDatabase
 	    this.AbortScanButton.BackColor = System.Drawing.Color.DimGray;
 	    this.AbortScanButton.ForeColor = System.Drawing.Color.White;
 	    this.AbortScanButton.Image = global::MultimediaDatabase.Properties.Resources.Red_Cross;
-	    this.AbortScanButton.Location = new System.Drawing.Point(638, 731);
+	    this.AbortScanButton.Location = new System.Drawing.Point(638, 835);
 	    this.AbortScanButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 	    this.AbortScanButton.Name = "AbortScanButton";
 	    this.AbortScanButton.Size = new System.Drawing.Size(149, 34);
@@ -999,12 +1000,27 @@ namespace MultimediaDatabase
 	    this.AbortScanButton.Visible = false;
 	    this.AbortScanButton.Click += new System.EventHandler(this.AbortScanButton_Click);
 	    // 
+	    // DumpColumnSizeButton
+	    // 
+	    this.DumpColumnSizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+	    this.DumpColumnSizeButton.BackColor = System.Drawing.Color.DimGray;
+	    this.DumpColumnSizeButton.ForeColor = System.Drawing.SystemColors.Control;
+	    this.DumpColumnSizeButton.Location = new System.Drawing.Point(1305, 835);
+	    this.DumpColumnSizeButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+	    this.DumpColumnSizeButton.Name = "DumpColumnSizeButton";
+	    this.DumpColumnSizeButton.Size = new System.Drawing.Size(34, 34);
+	    this.DumpColumnSizeButton.TabIndex = 17;
+	    this.DumpColumnSizeButton.Text = "d";
+	    this.DumpColumnSizeButton.UseVisualStyleBackColor = false;
+	    this.DumpColumnSizeButton.Click += new System.EventHandler(this.DumpColumnSizeButton_Click);
+	    // 
 	    // TMainForm
 	    // 
 	    this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
 	    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 	    this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-	    this.ClientSize = new System.Drawing.Size(1367, 793);
+	    this.ClientSize = new System.Drawing.Size(1560, 897);
+	    this.Controls.Add(this.DumpColumnSizeButton);
 	    this.Controls.Add(this.AbortScanButton);
 	    this.Controls.Add(this.EditDatabaseButton);
 	    this.Controls.Add(this.AddDatabaseButton);
@@ -1099,7 +1115,7 @@ namespace MultimediaDatabase
 	private System.Windows.Forms.ColumnHeader FilesAddedVideoChannelLayoutColumnHeader;
 	private System.Windows.Forms.ColumnHeader FilesAddedAudioChannelPositionsColumnHeader;
 	private System.Windows.Forms.ListView DeletedFilesListView;
-	private System.Windows.Forms.ColumnHeader columnHeader1;
+	private System.Windows.Forms.ColumnHeader FilesDeletedTitleColumnHeader;
 	private System.Windows.Forms.ColumnHeader FilesDeletedArtistColumnHeader;
 	private System.Windows.Forms.ColumnHeader columnHeader3;
 	private System.Windows.Forms.ColumnHeader FilesDeletedSizeColumnHeader;
@@ -1142,6 +1158,7 @@ namespace MultimediaDatabase
 	private System.Windows.Forms.Button AddDatabaseButton;
 	private System.Windows.Forms.Button EditDatabaseButton;
 	private System.Windows.Forms.Button AbortScanButton;
+	private System.Windows.Forms.Button DumpColumnSizeButton;
     }
 }
 
