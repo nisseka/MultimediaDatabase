@@ -252,13 +252,13 @@ namespace MultimediaDatabase
 				    queryColumns.Add(Program.MySQLTableColumn_Duration, mediaInfo.Duration);
 				    queryColumns.Add(Resources.MySQLTableColumn_MediaInfoHumanReadable, "@MediaInfoHumanReadable");
 
-				    /*
-									j &= db.ExecuteQuery("UPDATE {0} SET OverallBitRate={1},AudioSampleRate={2},AudioNumChannels={3},AudioBitRate={4},AudioCodec='{5}',AudioBitDepth={6} WHERE id={7}", CurrentTableName,
-											mediaInfo.OverallBitRate, mediaInfo.AudioSampleRate, mediaInfo.AudioChannelCount, mediaInfo.AudioBitRate(0), mediaInfo.AudioCodec,
-											mediaInfo.AudioBitDepth, id) > 0 ? true : false;
-									j &= db.ExecuteQuery("UPDATE {0} SET MediaInfoRawData=@MediaInfoRawData,Duration={1} WHERE id={2}", CurrentTableName,
+/*
+					j &= db.ExecuteQuery("UPDATE {0} SET OverallBitRate={1},AudioSampleRate={2},AudioNumChannels={3},AudioBitRate={4},AudioCodec='{5}',AudioBitDepth={6} WHERE id={7}", CurrentTableName,
+									mediaInfo.OverallBitRate, mediaInfo.AudioSampleRate, mediaInfo.AudioChannelCount, mediaInfo.AudioBitRate(0), mediaInfo.AudioCodec,
+									mediaInfo.AudioBitDepth, id) > 0 ? true : false;
+					j &= db.ExecuteQuery("UPDATE {0} SET MediaInfoRawData=@MediaInfoRawData,Duration={1} WHERE id={2}", CurrentTableName,
 											mediaInfo.Duration, id) > 0 ? true : false;
-				    */
+*/
 
 				    if (mediaInfo.VideoTracksCount > 0)
 				    {
