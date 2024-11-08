@@ -470,7 +470,7 @@ namespace MultimediaDatabase
 				}
 
 
-				//				if	(SeasonEpisodeID && c>2)
+//				if	(SeasonEpisodeID && c>2)
 				if (c > 2)
 				{
 				    title += System.String.Format(" ({0})", str);
@@ -495,12 +495,12 @@ namespace MultimediaDatabase
 			    db.AddVariable(Resources.MySQLTableColumn_MediaInfoRawData, mediaInfo.RawDataString);
 			    db.AddVariable(Resources.MySQLTableColumn_MediaInfoHumanReadable, mediaInfo.MediaInfoString);
 
-			    /*
-							if (db.ExecuteQuery("INSERT INTO {0} (filename,path,filesize,{1},title,filetype,URL,WebShareURL,DateAndTime,MediaInfoRawData,Duration,OverallBitRate,AudioSampleRate,AudioNumChannels,AudioBitRate,AudioCodec,AudioBitDepth) VALUES ('{2}','{3}',{4},'{5}','{6}','{7}','{8}','{9}','{10}',@MediaInfoRawData,{11},{12},{13},{14},{15},'{16}',{17})",
-								    CurrentTableName, CurrentArtistDBColumnName, filename, path, sizel, artist, title, filetype, url, webshare_url,
-								    datetime, mediaInfo.Duration, mediaInfo.OverallBitRate, mediaInfo.AudioSampleRate, mediaInfo.AudioChannelCount,
-								    mediaInfo.AudioBitRate(0), mediaInfo.AudioCodec, mediaInfo.AudioBitDepth) > 0)
-			    */
+/*
+			    if (db.ExecuteQuery("INSERT INTO {0} (filename,path,filesize,{1},title,filetype,URL,WebShareURL,DateAndTime,MediaInfoRawData,Duration,OverallBitRate,AudioSampleRate,AudioNumChannels,AudioBitRate,AudioCodec,AudioBitDepth) VALUES ('{2}','{3}',{4},'{5}','{6}','{7}','{8}','{9}','{10}',@MediaInfoRawData,{11},{12},{13},{14},{15},'{16}',{17})",
+					    CurrentTableName, CurrentArtistDBColumnName, filename, path, sizel, artist, title, filetype, url, webshare_url,
+					    datetime, mediaInfo.Duration, mediaInfo.OverallBitRate, mediaInfo.AudioSampleRate, mediaInfo.AudioChannelCount,
+					    mediaInfo.AudioBitRate(0), mediaInfo.AudioCodec, mediaInfo.AudioBitDepth) > 0)
+*/
 			    queryColumns.Clear();
 			    queryColumns.Add(Program.MySQLTableColumn_Filename, filename);
 			    queryColumns.Add(Program.MySQLTableColumn_Path, path);
@@ -560,7 +560,7 @@ namespace MultimediaDatabase
 
 				if (CurrentDBi == TDatabases.dbTVShows)
 				{
-				    //				    db.ExecuteQuery("UPDATE {0} SET SeasonID={1},SeasonEpisodeID={2} WHERE id={3}", CurrentTableName, SeasonID, SeasonEpisodeID, id);
+//				    db.ExecuteQuery("UPDATE {0} SET SeasonID={1},SeasonEpisodeID={2} WHERE id={3}", CurrentTableName, SeasonID, SeasonEpisodeID, id);
 
 				    queryColumns.Add("SeasonID", SeasonID);
 				    queryColumns.Add("SeasonEpisodeID", SeasonEpisodeID);
@@ -571,8 +571,8 @@ namespace MultimediaDatabase
 
 				if (mediaInfo.VideoTracksCount > 0)
 				{
-				    //				    db.ExecuteQuery("UPDATE {0} SET Resolution='{1}',FrameRate={2},VideoBitRate={3},VideoCodec='{4}' WHERE id={5}", CurrentTableName, mediaInfo.VideoResolution,
-				    //					       mediaInfo.VideoFrameRate(0), mediaInfo.VideoBitRate(0), mediaInfo.VideoCodec, id);
+//				    db.ExecuteQuery("UPDATE {0} SET Resolution='{1}',FrameRate={2},VideoBitRate={3},VideoCodec='{4}' WHERE id={5}", CurrentTableName, mediaInfo.VideoResolution,
+//					       mediaInfo.VideoFrameRate(0), mediaInfo.VideoBitRate(0), mediaInfo.VideoCodec, id);
 
 				    queryColumns.Add(Program.MySQLTableColumn_Resolution, mediaInfo.VideoResolution);
 				    queryColumns.Add(Program.MySQLTableColumn_FrameRate, mediaInfo.VideoFrameRate(0));
@@ -596,7 +596,7 @@ namespace MultimediaDatabase
 		    }
 		    c = DirQR.Count;
 
-		    //		    Standard.SetupListView(DeletedFilesListView, c, Program.NumColumns);
+//		    Standard.SetupListView(DeletedFilesListView, c, Program.NumColumns);
 		    DeletedFilesListView.Items.Clear();
 
 		    DeletedFilesmediaInfosList.Clear();
@@ -639,7 +639,7 @@ namespace MultimediaDatabase
 	    TMySQLDataRow dr;
 	    int c, r;
 
-	    r = MySQL.ConnectToMySQLServer(db, "mysql.wpnet.se", "stefan", "piU9Jfdj6W^*BfG", "multimediadatabase");
+	    r = MySQL.ConnectToMySQLServer(db, "server.wpnet.se", "stefan", "piU9Jfdj6W^*BfG", "multimediadatabase");
 
 	    if (r < 0)
 	    {
@@ -650,14 +650,14 @@ namespace MultimediaDatabase
 	    db.ReadOptions("wnet.multimedia_config");
 	    db.ReadFileTypes("wnet.multimediafiletypes", TMMFileTypeEn.All, Program.FileTypes);
 
-	    //	    c = db.ExecuteQuery("SELECT * FROM dbs ORDER BY Title");
+//	    c = db.ExecuteQuery("SELECT * FROM dbs ORDER BY Title");
 
 	    c = MultimediaDatabases.ReadFromDB(Resources.DBS_TableName);
 
-	    /*
-			c = db.ExecuteSelectQuery(Resources.DBS_TableName, string.Empty, $"ORDER BY {Program.MySQLTableColumn_Title}");
-			multimediaDBs.Assign(MySQLQueryResult);
-	    */
+/*
+	    c = db.ExecuteSelectQuery(Resources.DBS_TableName, string.Empty, $"ORDER BY {Program.MySQLTableColumn_Title}");
+	    multimediaDBs.Assign(MySQLQueryResult);
+*/
 
 	    MultimediaDatabases.BuildComboBox(CurrentDatabaseComboBox);
 
@@ -668,9 +668,9 @@ namespace MultimediaDatabase
 
 	    CurrentDatabaseComboBox.SelectedIndex = 0;
 
-	    //	    db.ExecuteInsertQuery("videoclips",new Dictionary<string, object>() { { "filename", "dfd.mkv"}, { Program.ySQLColumnHeader_Filesize, 54898957 } });
+//	    db.ExecuteInsertQuery("videoclips",new Dictionary<string, object>() { { "filename", "dfd.mkv"}, { Program.ySQLColumnHeader_Filesize, 54898957 } });
 
-	    db.ExecuteSelectQuery("videoclips", string.Empty, null, "LIKE '%å%'", "filename");
+//	    db.ExecuteSelectQuery("videoclips", string.Empty, null, "LIKE '%å%'", "filename");
 
 	}
 
